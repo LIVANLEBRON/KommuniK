@@ -3,202 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos - KommuniK Academy | Santo Domingo 2025</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Cursos | KommuniK Academy</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/floating-elements.css">
+    <link rel="stylesheet" href="css/header-adjustments.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/courses-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <a href="index.html">
-                        <h2>KommuniK Academy</h2>
-                    </a>
+    <!-- Header con navegación -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.ico" alt="KommuniK Academy Logo">
+                    <span>KommuniK Academy</span>
+                </a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
                 </div>
                 <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html#sobre-nosotros" class="nav-link">Sobre Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="cursos.html" class="nav-link active">Cursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="testimonios.html" class="nav-link">Testimonios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contacto.html" class="nav-link">Contacto</a>
-                    </li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cursos.html" class="active">Cursos</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li><a href="asesorias.html">Asesorías</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li class="platform-btn"><a href="#" class="btn btn-primary">Acceder a la Plataforma</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <!-- Page Header -->
     <section class="page-header">
-        <div class="container">
+        <!-- Elementos animados flotantes -->
+        <div class="floating-elements">
+            <div class="floating-element element-1"><i class="fas fa-comment-dots"></i></div>
+            <div class="floating-element element-2"><i class="fas fa-book"></i></div>
+            <div class="floating-element element-3"><i class="fas fa-graduation-cap"></i></div>
+            <div class="floating-element element-4"><i class="fas fa-globe-americas"></i></div>
+            <div class="floating-element element-5"><i class="fas fa-headset"></i></div>
+            <div class="floating-element element-6"><i class="fas fa-laptop"></i></div>
+            <div class="floating-element element-7">A</div>
+            <div class="floating-element element-8">B</div>
+            <div class="floating-element element-9">C</div>
+            <div class="floating-element element-10"><i class="fas fa-star"></i></div>
+            <div class="floating-element element-11"><i class="fas fa-certificate"></i></div>
+            <div class="floating-element element-12"><i class="fas fa-lightbulb"></i></div>
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
             <h1>Nuestros Cursos</h1>
-            <p>Programas especializados diseñados para tu éxito profesional en 2025</p>
+            <p>Descubre nuestros cursos especializados para potenciar tu inglés</p>
         </div>
     </section>
 
-    <!-- Cursos -->
-    <section class="courses-full">
+    <!-- Courses Description -->
+    <section class="courses-intro">
         <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Programas Especializados</span>
+                <h2>Nuestros Programas</h2>
+                <div class="separator"></div>
+                <p>En KommuniK Academy ofrecemos cursos especializados en inglés conversacional y servicio al cliente, diseñados para mejorar tus habilidades y aumentar tu empleabilidad.</p>
+            </div>
+            <div class="access-note-modern">
+                <div class="note-icon-modern">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 8V8.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="note-content">
+                    <p>Todos nuestros cursos incluyen acceso a nuestra plataforma de aprendizaje y recursos digitales.</p>
+                    <a href="#" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Acceder a la Plataforma</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge"><i class="fas fa-graduation-cap"></i> Oferta Educativa</span>
+                <h2>Cursos Disponibles</h2>
+                <div class="separator"></div>
+                <p>Selecciona el programa que mejor se adapte a tus objetivos y necesidades</p>
+            </div>
             <div class="courses-grid">
-                <div class="course-card featured">
-                    <div class="course-badge">Destacado</div>
-                    <div class="course-icon">
-                        <i class="fas fa-laptop"></i>
+                <!-- Course 1 -->
+                <div class="course-card reveal reveal-up" style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                    <div class="course-image-modern course-image-english" style="position: relative; overflow: hidden;">
+                        <div class="course-icon-container" style="position: absolute; top: 20px; left: 20px; z-index: 2;">
+                            <div class="course-icon" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #9c27b0, #673ab7); display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px;">
+                                    <path d="M3 11C3 7.13401 6.13401 4 10 4C13.866 4 17 7.13401 17 11V13C17 13.5523 17.4477 14 18 14C18.5523 14 19 13.5523 19 13V11C19 6.02944 14.9706 2 10 2C5.02944 2 1 6.02944 1 11V13C1 13.5523 1.44772 14 2 14C2.55228 14 3 13.5523 3 13V11Z" fill="currentColor"/>
+                                    <path d="M5 14C4.44772 14 4 14.4477 4 15V18C4 19.1046 4.89543 20 6 20H8C8.55228 20 9 19.5523 9 19C9 18.4477 8.55228 18 8 18H6V15C6 14.4477 5.55228 14 5 14Z" fill="currentColor"/>
+                                    <path d="M15 14C14.4477 14 14 14.4477 14 15V18H12C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20H14C15.1046 20 16 19.1046 16 18V15C16 14.4477 15.5523 14 15 14Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <img src="images/online-english-classes.jpg" alt="Online English Classes" class="course-background-image" style="transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <div class="course-price" style="position: absolute; bottom: 20px; right: 20px; background: linear-gradient(135deg, #9c27b0, #673ab7); color: white; padding: 8px 15px; border-radius: 30px; font-weight: 700; box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);">RD$7,500</div>
+                        <div class="course-tag" style="position: absolute; top: 20px; right: 20px; background: #9c27b0; color: white; padding: 5px 15px; border-radius: 30px; font-weight: 600; font-size: 0.85rem; box-shadow: 0 3px 10px rgba(156, 39, 176, 0.3);">Destacado</div>
                     </div>
-                    <h3 class="course-title">Online English Classes</h3>
-                    <p class="course-description">¡Aprende a comunicarte con seguridad y fluidez! Clases virtuales diseñadas para desarrollar tus habilidades de comunicación en inglés de forma efectiva.</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-clock"></i> Duración: 8 semanas</li>
-                        <li><i class="fas fa-signal"></i> Nivel: Todos los niveles</li>
-                        <li><i class="fas fa-laptop"></i> Modalidad: 100% Virtual</li>
-                        <li><i class="fas fa-users"></i> Grupos pequeños (máx. 8 estudiantes)</li>
-                        <li><i class="fas fa-book"></i> Material práctico incluido</li>
-                    </ul>
-                    <div class="course-price">RD$11,900</div>
-                    <a href="#" class="btn btn-primary course-btn">Inscribirse Ahora</a>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-comments"></i>
+                    <div class="course-content" style="padding: 25px; background: white;">
+                        <h3 style="color: #9c27b0; font-size: 1.5rem; margin-bottom: 15px;">Online English Classes</h3>
+                        <ul class="course-meta" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; padding: 0; list-style: none;">
+                            <li style="display: flex; align-items: center; color: #9c27b0;"><i class="fas fa-calendar" style="margin-right: 8px;"></i> 8 semanas</li>
+                            <li style="display: flex; align-items: center; color: #9c27b0;"><i class="fas fa-signal" style="margin-right: 8px;"></i> Todos los niveles</li>
+                            <li style="display: flex; align-items: center; color: #9c27b0;"><i class="fas fa-users" style="margin-right: 8px;"></i> Máx. 8 estudiantes</li>
+                        </ul>
+                        <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">Aprende inglés desde la comodidad de tu hogar con nuestras clases en vivo impartidas por profesores nativos y certificados.</p>
+                        <div class="course-details" style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
+                            <h4 style="color: #9c27b0; margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-list-check" style="margin-right: 10px;"></i> ¿Qué incluye?</h4>
+                            <ul style="padding-left: 10px; list-style: none;">
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> 24 horas de clases en vivo</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Material didáctico digital</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Plataforma interactiva</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Evaluación de nivel</li>
+                                <li style="display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Certificado de finalización</li>
+                            </ul>
+                        </div>
+                        <div class="course-actions" style="display: flex; gap: 10px;">
+                            <a href="contacto.html" class="btn btn-primary" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.3s ease; background: linear-gradient(135deg, #9c27b0, #673ab7);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fas fa-info-circle"></i> Solicitar información</a>
+                            <a href="#" class="btn btn-outline course-details-btn" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.3s ease; border-color: #9c27b0; color: #9c27b0;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fas fa-eye"></i> Ver detalles</a>
+                        </div>
                     </div>
-                    <h3 class="course-title">Conversation Practice</h3>
-                    <p class="course-description">Desarrolla fluidez en conversaciones del día a día. Sesiones prácticas enfocadas en situaciones reales para ganar confianza al hablar inglés.</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-clock"></i> Duración: 6 semanas</li>
-                        <li><i class="fas fa-signal"></i> Nivel: Básico-Intermedio</li>
-                        <li><i class="fas fa-laptop"></i> Modalidad: Virtual</li>
-                        <li><i class="fas fa-users"></i> Grupos pequeños (máx. 6 estudiantes)</li>
-                        <li><i class="fas fa-book"></i> Material práctico incluido</li>
-                    </ul>
-                    <div class="course-price">RD$9,900</div>
-                    <a href="#" class="btn btn-primary course-btn">Inscribirse Ahora</a>
                 </div>
-                
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="course-title">Call Center Training</h3>
-                    <p class="course-description">Especialízate en atención al cliente en inglés. Programa orientado a empleabilidad en centros de llamadas y servicio al cliente internacional.</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-clock"></i> Duración: 10 semanas</li>
-                        <li><i class="fas fa-signal"></i> Nivel: Intermedio</li>
-                        <li><i class="fas fa-laptop"></i> Modalidad: Virtual</li>
-                        <li><i class="fas fa-briefcase"></i> Orientado a empleabilidad</li>
-                        <li><i class="fas fa-book"></i> Material práctico incluido</li>
-                    </ul>
-                    <div class="course-price">RD$15,900</div>
-                    <a href="#" class="btn btn-primary course-btn">Inscribirse Ahora</a>
-                </div>
-            </div>
 
-            <!-- Información adicional -->
-            <div class="course-info">
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                <!-- Course 2 -->
+                <div class="course-card reveal reveal-up" style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                    <div class="course-image-modern course-image-conversation" style="position: relative; overflow: hidden;">
+                        <div class="course-icon-container" style="position: absolute; top: 20px; left: 20px; z-index: 2;">
+                            <div class="course-icon" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #26c6da, #00acc1); display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0, 172, 193, 0.3);">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px;">
+                                    <path d="M8 12H16M8 8H16M6 20L2 16V4C2 2.9 2.9 2 4 2H20C21.1 2 22 2.9 22 4V16C22 17.1 21.1 18 20 18H8L6 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    <circle cx="6" cy="8" r="1" fill="currentColor"/>
+                                    <circle cx="18" cy="8" r="1" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <img src="images/conversation-practice.jpg" alt="Conversation Practice" class="course-background-image" style="transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <div class="course-price" style="position: absolute; bottom: 20px; right: 20px; background: linear-gradient(135deg, #26c6da, #00acc1); color: white; padding: 8px 15px; border-radius: 30px; font-weight: 700; box-shadow: 0 5px 15px rgba(0, 172, 193, 0.3);">RD$9,900</div>
+                        <div class="course-tag" style="position: absolute; top: 20px; right: 20px; background: #2196f3; color: white; padding: 5px 15px; border-radius: 30px; font-weight: 600; font-size: 0.85rem; box-shadow: 0 3px 10px rgba(33, 150, 243, 0.3);">Popular</div>
                     </div>
-                    <h3>Metodología Probada</h3>
-                    <p>Nuestro método se enfoca en la práctica conversacional desde el primer día, garantizando resultados rápidos y efectivos.</p>
+                    <div class="course-content" style="padding: 25px; background: white;">
+                        <h3 style="color: #00acc1; font-size: 1.5rem; margin-bottom: 15px;">Conversation Practice</h3>
+                        <ul class="course-meta" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; padding: 0; list-style: none;">
+                            <li style="display: flex; align-items: center; color: #26c6da;"><i class="fas fa-calendar" style="margin-right: 8px;"></i> 6 semanas</li>
+                            <li style="display: flex; align-items: center; color: #26c6da;"><i class="fas fa-signal" style="margin-right: 8px;"></i> Básico-Intermedio</li>
+                            <li style="display: flex; align-items: center; color: #26c6da;"><i class="fas fa-users" style="margin-right: 8px;"></i> Máx. 6 estudiantes</li>
+                        </ul>
+                        <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">Programa intensivo de práctica conversacional para mejorar tu fluidez y confianza al hablar inglés en situaciones cotidianas y profesionales.</p>
+                        <div class="course-details" style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
+                            <h4 style="color: #00acc1; margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-list-check" style="margin-right: 10px;"></i> ¿Qué incluye?</h4>
+                            <ul style="padding-left: 10px; list-style: none;">
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Sesiones grupales de conversación</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Temas prácticos y relevantes</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Corrección personalizada</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Ejercicios de pronunciación</li>
+                                <li style="display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Certificado de participación</li>
+                            </ul>
+                        </div>
+                        <div class="course-actions" style="display: flex; gap: 10px;">
+                            <a href="contacto.html" class="btn btn-primary" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.3s ease; background: linear-gradient(135deg, #26c6da, #00acc1);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fas fa-info-circle"></i> Solicitar información</a>
+                            <a href="#" class="btn btn-outline course-details-btn" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.3s ease; border-color: #00acc1; color: #00acc1;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fas fa-eye"></i> Ver detalles</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
+
+                <!-- Course 3 -->
+                <div class="course-card reveal reveal-up" style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                    <div class="course-image-modern course-image-callcenter" style="position: relative; overflow: hidden;">
+                        <div class="course-icon-container" style="position: absolute; top: 20px; left: 20px; z-index: 2;">
+                            <div class="course-icon" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #ff7043, #ff5722); display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px;">
+                                    <path d="M3 11C3 7.13401 6.13401 4 10 4C13.866 4 17 7.13401 17 11V13C17 13.5523 17.4477 14 18 14C18.5523 14 19 13.5523 19 13V11C19 6.02944 14.9706 2 10 2C5.02944 2 1 6.02944 1 11V13C1 13.5523 1.44772 14 2 14C2.55228 14 3 13.5523 3 13V11Z" fill="currentColor"/>
+                                    <path d="M5 14C4.44772 14 4 14.4477 4 15V18C4 19.1046 4.89543 20 6 20H8C8.55228 20 9 19.5523 9 19C9 18.4477 8.55228 18 8 18H6V15C6 14.4477 5.55228 14 5 14Z" fill="currentColor"/>
+                                    <path d="M15 14C15.5523 14 16 14.4477 16 15V18H14C13.4477 18 13 18.4477 13 19C13 19.5523 13.4477 20 14 20H16C17.1046 20 18 19.1046 18 18V15C18 14.4477 17.5523 14 17 14H15Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <img src="images/call-center-training.jpg" alt="Call Center Training" class="course-background-image" style="transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <div class="course-price" style="position: absolute; bottom: 20px; right: 20px; background: linear-gradient(135deg, #ff7043, #ff5722); color: white; padding: 8px 15px; border-radius: 30px; font-weight: 700; box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);">RD$15,900</div>
+                        <div class="course-tag" style="position: absolute; top: 20px; right: 20px; background: #ff5722; color: white; padding: 5px 15px; border-radius: 30px; font-weight: 600; font-size: 0.85rem; box-shadow: 0 3px 10px rgba(255, 87, 34, 0.3);">Alta demanda</div>
                     </div>
-                    <h3>Profesores Nativos</h3>
-                    <p>Aprende con instructores nativos y certificados con amplia experiencia en enseñanza de inglés conversacional.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                    <div class="course-content" style="padding: 25px; background: white;">
+                        <h3 style="color: #ff5722; font-size: 1.5rem; margin-bottom: 15px;">Call Center Training</h3>
+                        <ul class="course-meta" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; padding: 0; list-style: none;">
+                            <li style="display: flex; align-items: center; color: #ff7043;"><i class="fas fa-calendar" style="margin-right: 8px;"></i> 10 semanas</li>
+                            <li style="display: flex; align-items: center; color: #ff7043;"><i class="fas fa-signal" style="margin-right: 8px;"></i> Intermedio</li>
+                            <li style="display: flex; align-items: center; color: #ff7043;"><i class="fas fa-briefcase" style="margin-right: 8px;"></i> Enfoque laboral</li>
+                        </ul>
+                        <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">Preparación completa para trabajar en call centers internacionales. Aprende vocabulario especializado, manejo de llamadas y resolución de problemas.</p>
+                        <div class="course-details" style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
+                            <h4 style="color: #ff5722; margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-list-check" style="margin-right: 10px;"></i> ¿Qué incluye?</h4>
+                            <ul style="padding-left: 10px; list-style: none;">
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Simulaciones de llamadas reales</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Vocabulario técnico especializado</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Técnicas de servicio al cliente</li>
+                                <li style="margin-bottom: 8px; display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Manejo de situaciones difíciles</li>
+                                <li style="display: flex; align-items: center;"><i class="fas fa-check" style="color: #4caf50; margin-right: 10px;"></i> Certificado profesional</li>
+                            </ul>
+                        </div>
+                        <div class="course-actions" style="display: flex; gap: 10px;">
+                            <a href="contacto.html" class="btn btn-primary" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.3s ease; background: linear-gradient(135deg, #ff7043, #ff5722);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fas fa-info-circle"></i> Solicitar información</a>
+                            <a href="#" class="btn btn-outline course-details-btn" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.3s ease; border-color: #ff5722; color: #ff5722;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fas fa-eye"></i> Ver detalles</a>
+                        </div>
                     </div>
-                    <h3>Plataforma Digital</h3>
-                    <p>Accede a materiales, tareas y recursos adicionales a través de nuestra plataforma educativa disponible 24/7.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3>KommuniK Academy</h3>
-                    </div>
-                    <p>Transformando vidas a través del inglés conversacional y servicio al cliente de excelencia.</p>
-                    <div class="social-links">
-                        <a href="https://instagram.com/KommuniKAcademy" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
-                        <li><a href="cursos.html">Cursos</a></li>
-                        <li><a href="testimonios.html">Testimonios</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Cursos</h4>
-                    <ul class="footer-links">
-                        <li><a href="cursos.html">Online English Classes</a></li>
-                        <li><a href="cursos.html">Conversation Practice</a></li>
-                        <li><a href="cursos.html">Call Center Training</a></li>
-                        <li><a href="cursos.html">Cursos Personalizados</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> KommuniKAcademy@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> +1 (829) 894-9783</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Santo Domingo</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-divider"></div>
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 KommuniK Academy. Todos los derechos reservados.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#">Política de Privacidad</a>
-                        <a href="#">Términos de Servicio</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/18298949783" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/18298949783" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

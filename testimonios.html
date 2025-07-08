@@ -3,352 +3,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testimonios - KommuniK Academy | Santo Domingo 2025</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Testimonios | KommuniK Academy</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/floating-elements.css">
+    <link rel="stylesheet" href="css/header-adjustments.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/courses-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Testimonials Page Specific Styles */
+        .page-header {
+            background: linear-gradient(rgba(106, 27, 154, 0.8), rgba(106, 27, 154, 0.9)), url('images/testimonios-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .testimonial-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-light);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .page-header h1 {
+            color: var(--white);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .testimonials-section {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--light-gray);
+        }
+        
+        .testimonial-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin: 0 auto;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            max-width: 700px;
+        }
+        
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto var(--spacing-md);
+            overflow: hidden;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary-light);
+            position: absolute;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: 0;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .testimonial-rating {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .carousel-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 var(--spacing-sm);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-btn:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .testimonial-card-grid {
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card-grid:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .testimonial-header-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: var(--spacing-md);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .testimonial-header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-header-info {
+            flex: 1;
+        }
+        
+        .testimonial-header-author {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0;
+        }
+        
+        .testimonial-header-role {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <a href="index.html">
-                        <h2>KommuniK Academy</h2>
-                    </a>
+    <!-- Header con navegación -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.ico" alt="KommuniK Academy Logo">
+                    <span>KommuniK Academy</span>
+                </a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
                 </div>
                 <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html#sobre-nosotros" class="nav-link">Sobre Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="cursos.html" class="nav-link">Cursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="testimonios.html" class="nav-link active">Testimonios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contacto.html" class="nav-link">Contacto</a>
-                    </li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="testimonios.html" class="active">Testimonios</a></li>
+                    <li><a href="asesorias.html">Asesorías</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li class="platform-btn"><a href="#" class="btn btn-primary">Acceder a la Plataforma</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <!-- Page Header -->
     <section class="page-header">
-        <div class="container">
+        <!-- Elementos animados flotantes -->
+        <div class="floating-elements">
+            <div class="floating-element element-1"><i class="fas fa-comment-dots"></i></div>
+            <div class="floating-element element-2"><i class="fas fa-book"></i></div>
+            <div class="floating-element element-3"><i class="fas fa-graduation-cap"></i></div>
+            <div class="floating-element element-4"><i class="fas fa-globe-americas"></i></div>
+            <div class="floating-element element-5"><i class="fas fa-headset"></i></div>
+            <div class="floating-element element-6"><i class="fas fa-laptop"></i></div>
+            <div class="floating-element element-7">A</div>
+            <div class="floating-element element-8">B</div>
+            <div class="floating-element element-9">C</div>
+            <div class="floating-element element-10"><i class="fas fa-star"></i></div>
+            <div class="floating-element element-11"><i class="fas fa-certificate"></i></div>
+            <div class="floating-element element-12"><i class="fas fa-lightbulb"></i></div>
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
             <h1>Testimonios</h1>
-            <p>Historias reales de éxito de nuestros estudiantes en 2025</p>
+            <p>Lo que nuestros estudiantes dicen sobre nosotros</p>
         </div>
     </section>
 
-    <!-- Testimonios -->
-    <section class="testimonials-full">
+    <!-- Featured Testimonials -->
+    <section class="testimonials-section">
         <div class="container">
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Gracias a KommuniK Academy conseguí mi trabajo soñado en una empresa internacional. Los profesores son excelentes y la metodología realmente funciona. En solo 3 meses pude mantener conversaciones fluidas con clientes extranjeros."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>María González</h4>
-                            <span>Ejecutiva de Ventas - Empresa Multinacional</span>
-                            <div class="course-taken">Curso: Online English Classes</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"El curso de servicio al cliente me ayudó a mejorar significativamente mi desempeño laboral. Ahora puedo atender clientes internacionales con confianza y mi supervisor me felicitó por mi progreso."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Carlos Rodríguez</h4>
-                            <span>Agente de Call Center - Empresa Internacional</span>
-                            <div class="course-taken">Curso: Call Center Training</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"La plataforma es muy fácil de usar y los materiales están muy bien organizados. Pude estudiar a mi propio ritmo y ver mi progreso claramente. Los profesores siempre estuvieron disponibles para ayudarme."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Ana Martínez</h4>
-                            <span>Estudiante Universitaria</span>
-                            <div class="course-taken">Curso: Conversation Practice</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Como guía turístico, necesitaba mejorar mi inglés urgentemente. El curso de inglés para turismo fue perfecto. Ahora puedo ofrecer tours en inglés y mis ingresos han aumentado considerablemente."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Roberto Pérez</h4>
-                            <span>Guía Turístico - Zona Colonial</span>
-                            <div class="course-taken">Curso: Conversation Practice</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"El curso intensivo fue exactamente lo que necesitaba. En solo 4 semanas logré la fluidez que buscaba para mi nuevo trabajo. La metodología es muy efectiva y los resultados son inmediatos."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Lucía Fernández</h4>
-                            <span>Gerente de Recursos Humanos</span>
-                            <div class="course-taken">Curso: Online English Classes</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Trabajo en un hotel y necesitaba mejorar mi inglés para atender mejor a los huéspedes internacionales. Después del curso, recibí una promoción y ahora soy supervisora del área de recepción."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Carmen Jiménez</h4>
-                            <span>Supervisora de Recepción - Hotel Boutique</span>
-                            <div class="course-taken">Curso: Conversation Practice</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Las clases personalizadas VIP fueron una inversión excelente. El profesor se adaptó completamente a mis necesidades específicas y pude alcanzar mis objetivos profesionales en tiempo récord."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Dr. Miguel Santos</h4>
-                            <span>Director Médico - Clínica Internacional</span>
-                            <div class="course-taken">Curso: Online English Classes</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Como empresario, necesitaba mejorar mi inglés para expandir mi negocio internacionalmente. El curso de inglés de negocios me dio las herramientas necesarias para cerrar contratos importantes."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>José Luis Morales</h4>
-                            <span>CEO - Empresa de Exportación</span>
-                            <div class="course-taken">Curso: Inglés de Negocios</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"La flexibilidad de horarios fue clave para mí. Pude estudiar mientras trabajaba y cuidaba a mi familia. Los profesores fueron muy comprensivos y siempre me apoyaron en mi proceso de aprendizaje."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Patricia Vásquez</h4>
-                            <span>Contadora - Empresa de Servicios</span>
-                            <div class="course-taken">Curso: Call Center Training</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Estadísticas -->
-            <div class="testimonials-stats">
-                <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Satisfacción de Estudiantes</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Estudiantes Graduados</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">85%</div>
-                    <div class="stat-label">Mejora Laboral</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">4.9/5</div>
-                    <div class="stat-label">Calificación Promedio</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3>KommuniK Academy</h3>
-                    </div>
-                    <p>Transformando vidas a través del inglés conversacional y servicio al cliente de excelencia.</p>
-                    <div class="social-links">
-                        <a href="https://instagram.com/KommuniKAcademy" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
-                        <li><a href="cursos.html">Cursos</a></li>
-                        <li><a href="testimonios.html">Testimonios</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Cursos</h4>
-                    <ul class="footer-links">
-                        <li><a href="cursos.html">Online English Classes</a></li>
-                        <li><a href="cursos.html">Conversation Practice</a></li>
-                        <li><a href="cursos.html">Call Center Training</a></li>
-                        <li><a href="cursos.html">Cursos Personalizados</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> KommuniKAcademy@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> +1 (829) 894-9783</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Santo Domingo</p>
-                    </div>
-                </div>
+            <div class="section-header text-center">
+                <span class="section-badge"><i class="fas fa-quote-left"></i> Experiencias Reales</span>
+                <h2>Historias de Éxito</h2>
+                <div class="separator"></div>
+                <p>Descubre cómo KommuniK Academy ha transformado la vida profesional de nuestros estudiantes</p>
             </div>
             
-            <div class="footer-bottom">
-                <div class="footer-divider"></div>
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 KommuniK Academy. Todos los derechos reservados.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#">Política de Privacidad</a>
-                        <a href="#">Términos de Servicio</a>
+            <div class="testimonial-container" style="background: linear-gradient(135deg, #f5f7fa, #e4e8f0); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                <div class="testimonial-carousel">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card animate-fade-in" style="display: block; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                        <div class="quote-icon" style="position: absolute; top: 15px; right: 15px; opacity: 0.1; font-size: 60px;">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-image" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #9575cd, #5e35b1); display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; border: 5px solid #e1bee7; box-shadow: 0 5px 15px rgba(94, 53, 177, 0.3);">
+                            <i class="fas fa-user-graduate" style="font-size: 42px; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.2);"></i>
+                        </div>
+                        <div class="testimonial-rating" style="margin-bottom: 15px; color: #ffc107;">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-text" style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px; position: relative; z-index: 1;">
+                            <i class="fas fa-quote-left" style="font-size: 0.8em; opacity: 0.5; margin-right: 5px;"></i>
+                            Gracias a KommuniK Academy pude mejorar mi inglés conversacional y conseguir mi trabajo soñado en un call center internacional. La metodología práctica y el enfoque en situaciones reales me dieron la confianza que necesitaba.
+                            <i class="fas fa-quote-right" style="font-size: 0.8em; opacity: 0.5; margin-left: 5px;"></i>
+                        </div>
+                        <div class="testimonial-author" style="font-weight: 700; font-size: 1.2rem; color: #5e35b1;">María Rodríguez</div>
+                        <div class="testimonial-role" style="color: #7e57c2;">Agente de Servicio al Cliente <i class="fas fa-headset" style="margin-left: 5px;"></i></div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card animate-fade-in" style="display: none; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                        <div class="quote-icon" style="position: absolute; top: 15px; right: 15px; opacity: 0.1; font-size: 60px;">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-image" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #7e57c2, #4527a0); display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; border: 5px solid #e1bee7; box-shadow: 0 5px 15px rgba(94, 53, 177, 0.3);">
+                            <i class="fas fa-user" style="font-size: 42px; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.2);"></i>
+                        </div>
+                        <div class="testimonial-rating" style="margin-bottom: 15px; color: #ffc107;">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-text" style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px; position: relative; z-index: 1;">
+                            <i class="fas fa-quote-left" style="font-size: 0.8em; opacity: 0.5; margin-right: 5px;"></i>
+                            El curso de Conversation Practice me ayudó a perder el miedo a hablar en inglés. Los profesores son excelentes y las clases muy dinámicas. Ahora me siento mucho más seguro en mis conversaciones diarias.
+                            <i class="fas fa-quote-right" style="font-size: 0.8em; opacity: 0.5; margin-left: 5px;"></i>
+                        </div>
+                        <div class="testimonial-author" style="font-weight: 700; font-size: 1.2rem; color: #5e35b1;">Carlos Méndez</div>
+                        <div class="testimonial-role" style="color: #7e57c2;">Estudiante <i class="fas fa-user-graduate" style="margin-left: 5px;"></i></div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card animate-fade-in" style="display: none; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                        <div class="quote-icon" style="position: absolute; top: 15px; right: 15px; opacity: 0.1; font-size: 60px;">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-image" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #673ab7, #311b92); display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; border: 5px solid #e1bee7; box-shadow: 0 5px 15px rgba(94, 53, 177, 0.3);">
+                            <i class="fas fa-user-alt" style="font-size: 42px; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.2);"></i>
+                        </div>
+                        <div class="testimonial-rating" style="margin-bottom: 15px; color: #ffc107;">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-text" style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px; position: relative; z-index: 1;">
+                            <i class="fas fa-quote-left" style="font-size: 0.8em; opacity: 0.5; margin-right: 5px;"></i>
+                            La plataforma digital es muy intuitiva y el material complementario es excelente. Los ejercicios prácticos y las actividades interactivas hacen que el aprendizaje sea divertido. Recomiendo 100% KommuniK Academy.
+                            <i class="fas fa-quote-right" style="font-size: 0.8em; opacity: 0.5; margin-left: 5px;"></i>
+                        </div>
+                        <div class="testimonial-author" style="font-weight: 700; font-size: 1.2rem; color: #5e35b1;">Laura Sánchez</div>
+                        <div class="testimonial-role" style="color: #7e57c2;">Estudiante <i class="fas fa-laptop" style="margin-left: 5px;"></i></div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav" style="text-align: center; margin: 20px 0;">
+                    <button class="carousel-btn prev" style="background: #5e35b1; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 5px; cursor: pointer; box-shadow: 0 3px 10px rgba(94, 53, 177, 0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" style="background: #5e35b1; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 5px; cursor: pointer; box-shadow: 0 3px 10px rgba(94, 53, 177, 0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- More Testimonials Grid -->
+                <div class="section-header text-center" style="margin-top: 60px;">
+                    <span class="section-badge"><i class="fas fa-users"></i> Testimonios</span>
+                    <h2>Más Opiniones</h2>
+                    <div class="separator"></div>
+                    <p>Conoce lo que otros estudiantes opinan sobre su experiencia con nosotros</p>
+                </div>
+                
+                <div class="testimonial-grid" style="gap: 25px; margin-top: 30px;">
+                    <!-- Grid Testimonial 1 -->
+                    <div class="testimonial-card-grid reveal reveal-up" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;">
+                        <div class="quote-icon" style="position: absolute; top: 10px; right: 10px; opacity: 0.05; font-size: 50px;">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div class="testimonial-header-image" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #9575cd, #5e35b1); display: flex; align-items: center; justify-content: center; border: 3px solid #e1bee7; box-shadow: 0 4px 10px rgba(94, 53, 177, 0.2);">
+                                <i class="fas fa-user-tie" style="font-size: 28px; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.2);"></i>
+                            </div>
+                            <div class="testimonial-header-info" style="margin-left: 15px;">
+                                <div class="testimonial-header-author" style="font-weight: 700; font-size: 1.1rem; color: #5e35b1;">José Ramírez</div>
+                                <div class="testimonial-header-role" style="color: #7e57c2; font-size: 0.9rem;">Estudiante <i class="fas fa-user-graduate" style="margin-left: 5px;"></i></div>
+                                <div class="testimonial-rating" style="color: #ffc107; margin-top: 5px;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-text" style="font-size: 1rem; line-height: 1.6; position: relative; z-index: 1;">
+                            <i class="fas fa-quote-left" style="font-size: 0.8em; opacity: 0.5; margin-right: 5px;"></i>
+                            El curso de Conversation Practice me ayudó a perder el miedo a hablar en inglés. Las dinámicas de grupo y los ejercicios prácticos fueron clave para mi progreso. Ahora me siento mucho más seguro en cualquier situación.
+                            <i class="fas fa-quote-right" style="font-size: 0.8em; opacity: 0.5; margin-left: 5px;"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Grid Testimonial 2 -->
+                    <div class="testimonial-card-grid reveal reveal-up" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;">
+                        <div class="quote-icon" style="position: absolute; top: 10px; right: 10px; opacity: 0.05; font-size: 50px;">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div class="testimonial-header-image" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #7e57c2, #4527a0); display: flex; align-items: center; justify-content: center; border: 3px solid #e1bee7; box-shadow: 0 4px 10px rgba(94, 53, 177, 0.2);">
+                                <i class="fas fa-user-friends" style="font-size: 28px; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.2);"></i>
+                            </div>
+                            <div class="testimonial-header-info" style="margin-left: 15px;">
+                                <div class="testimonial-header-author" style="font-weight: 700; font-size: 1.1rem; color: #5e35b1;">Ana Gómez</div>
+                                <div class="testimonial-header-role" style="color: #7e57c2; font-size: 0.9rem;">Estudiante <i class="fas fa-comment" style="margin-left: 5px;"></i></div>
+                                <div class="testimonial-rating" style="color: #ffc107; margin-top: 5px;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-text" style="font-size: 1rem; line-height: 1.6; position: relative; z-index: 1;">
+                            <i class="fas fa-quote-left" style="font-size: 0.8em; opacity: 0.5; margin-right: 5px;"></i>
+                            Los grupos pequeños hacen que recibas mucha atención personalizada. Los profesores se enfocan en tus áreas de mejora y te dan retroalimentación constante. Mi pronunciación mejoró notablemente en pocas semanas y ahora puedo mantener conversaciones fluidas.
+                            <i class="fas fa-quote-right" style="font-size: 0.8em; opacity: 0.5; margin-left: 5px;"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/18298949783" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <span class="section-badge">Tu Futuro</span>
+                <h2>¿Listo para ser parte de nuestras historias de éxito?</h2>
+                <p>Únete a KommuniK Academy y transforma tu futuro profesional con nuestros cursos especializados.</p>
+                <a href="contacto.html" class="btn btn-primary btn-lg"><i class="fas fa-rocket"></i> Contáctanos hoy</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/18298949783" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
