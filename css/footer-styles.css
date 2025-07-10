@@ -12,6 +12,8 @@ footer.footer-modern {
     overflow: hidden;
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
     border-top: 5px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Formas decorativas de fondo */
@@ -86,14 +88,13 @@ footer.footer-modern {
 }
 
 .footer-logo-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 10px;
     margin-right: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -211,12 +212,12 @@ footer.footer-modern {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     margin-right: 10px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     transition: all 0.3s ease;
 }
 
@@ -242,12 +243,12 @@ footer.footer-modern {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 6px;
     margin-right: 12px;
-    font-size: 1rem;
+    font-size: 0.85rem;
     flex-shrink: 0;
 }
 
@@ -282,20 +283,20 @@ footer.footer-modern {
 }
 
 .contact-icon {
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 6px;
     margin-right: 12px;
     flex-shrink: 0;
 }
 
 .contact-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     color: white;
 }
 
@@ -342,15 +343,15 @@ footer.footer-modern {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 8px 15px;
+    padding: 6px 12px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 16px;
 }
 
 .social-link svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
 }
 
 .social-link span {
@@ -467,4 +468,34 @@ footer.footer-modern {
     .footer-stats {
         justify-content: center;
     }
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float i {
+    margin-top: 2px;
 }

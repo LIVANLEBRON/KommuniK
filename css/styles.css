@@ -109,6 +109,13 @@ nav a.active::after {
 }
 
 /* Botones */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
 .btn {
     display: inline-block;
     padding: 12px 30px;
