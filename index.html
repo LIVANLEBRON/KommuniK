@@ -7,7 +7,7 @@
     <link rel="icon" href="logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/floating-elements.css">
+    <link rel="stylesheet" href="css/floating-elements.css"> <!-- Este archivo controlará la posición y estilo de los elementos flotantes -->
     <link rel="stylesheet" href="css/header-adjustments.css">
     <link rel="stylesheet" href="css/footer-styles.css">
     <link rel="stylesheet" href="css/courses-styles.css">
@@ -40,32 +40,43 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- Elementos animados flotantes -->
-        <div class="floating-elements">
-            <div class="floating-element element-1"><i class="fas fa-comment-dots"></i></div>
-            <div class="floating-element element-2"><i class="fas fa-book"></i></div>
-            <div class="floating-element element-3"><i class="fas fa-graduation-cap"></i></div>
-            <div class="floating-element element-4"><i class="fas fa-globe-americas"></i></div>
-            <div class="floating-element element-5"><i class="fas fa-headset"></i></div>
-            <div class="floating-element element-6"><i class="fas fa-laptop"></i></div>
-            <div class="floating-element element-7">A</div>
-            <div class="floating-element element-8">B</div>
-            <div class="floating-element element-9">C</div>
-            <div class="floating-element element-10"><i class="fas fa-star"></i></div>
-            <div class="floating-element element-11"><i class="fas fa-certificate"></i></div>
-            <div class="floating-element element-12"><i class="fas fa-lightbulb"></i></div>
+    <!-- Nueva Hero Section (Portada), basada en el diseño anterior del CTA -->
+    <section class="hero hero-main-portada">
+        <!-- Formas de fondo del Hero (tomadas del CTA) -->
+        <div class="hero-background-shapes">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
         </div>
         
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="hero-content">
-                <h1 class="animate-fade-in">Domina el inglés y transforma tu futuro</h1>
-                <p class="animate-fade-in delay-1">Especialistas en inglés conversacional y servicio al cliente para call center</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary btn-lg animate-fade-in delay-2">Acceder a la Plataforma</a>
-                    <a href="cursos.html" class="btn btn-secondary btn-lg animate-fade-in delay-3">Ver Cursos</a>
-                </div>
+        <!-- Elementos flotantes personalizados para esta nueva portada -->
+        <div class="floating-elements-portada">
+            <!-- El icono de chispa principal -->
+            <div class="floating-element fe-main-sparkle">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                    <path d="M19 15L20.09 18.26L24 19L20.09 19.74L19 23L17.91 19.74L14 19L17.91 18.26L19 15Z" fill="currentColor"/>
+                    <path d="M5 6L5.5 7.5L7 8L5.5 8.5L5 10L4.5 8.5L3 8L4.5 7.5L5 6Z" fill="currentColor"/>
+                </svg>
+            </div>
+            
+            <!-- Otros círculos flotantes con iconos -->
+            <div class="floating-element fe-circle fe-circle-1"><i class="fas fa-comment-dots"></i></div>
+            <div class="floating-element fe-circle fe-circle-2"><i class="fas fa-redo-alt"></i></div>
+            <div class="floating-element fe-circle fe-circle-3"><i class="fas fa-globe-americas"></i></div>
+            <div class="floating-element fe-circle fe-circle-4"><i class="fas fa-clipboard-list"></i></div>
+            <div class="floating-element fe-circle fe-circle-5"><i class="fas fa-headset"></i></div>
+            <div class="floating-element fe-circle fe-circle-6"><i class="fas fa-thumbs-up"></i></div>
+            <div class="floating-element fe-circle fe-circle-7"></div> <!-- Círculo marrón vacío -->
+            <div class="floating-element fe-circle fe-circle-8"></div> <!-- Círculo verde pequeño vacío -->
+        </div>
+
+        <div class="container hero-content-portada">
+            <h1 class="animate-fade-in">¿Listo para transformar tu futuro?</h1>
+            <p class="animate-fade-in delay-1">Únete a KommuniK Academy y desarrolla las habilidades de inglés que necesitas para <span class="text-highlight-star"><i class="fas fa-star"></i></span> destacar en el mundo profesional. Tu éxito comienza aquí.</p>
+            <div class="hero-buttons animate-fade-in delay-2">
+                <a href="#" class="btn btn-white btn-lg">Acceder a la Plataforma</a>
+                <a href="cursos.html" class="btn btn-outline-white btn-lg">Ver Cursos</a>
             </div>
         </div>
     </section>
@@ -197,7 +208,6 @@
             </div>
             
             <div class="features-grid-modern">
-                <!-- Aquí puedes agregar nuevas ventajas o dejar solo las que correspondan según las nuevas especificaciones. Ejemplo: -->
                 <div class="feature-card-premium">
                     <div class="feature-header">
                         <div class="feature-icon-premium">
@@ -427,7 +437,7 @@
                             </div>
                             <div class="meta-item">
                                 <span class="meta-icon">👥</span>
-                                <span></span>
+                                <!-- Intentionally empty span for now, keeping consistency with other items, though it renders empty without content. You might remove it if no value is consistently displayed. -->
                             </div>
                         </div>
                         
@@ -453,32 +463,6 @@
                     <h3>¿No encuentras el curso ideal?</h3>
                     <p>Contáctanos para diseñar un programa personalizado según tus necesidades específicas</p>
                     <a href="contacto.html" class="btn-cta-courses">Programa personalizado</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta cta-modern">
-        <div class="cta-background">
-            <div class="cta-shape cta-shape-1"></div>
-            <div class="cta-shape cta-shape-2"></div>
-            <div class="cta-shape cta-shape-3"></div>
-        </div>
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                        <path d="M19 15L20.09 18.26L24 19L20.09 19.74L19 23L17.91 19.74L14 19L17.91 18.26L19 15Z" fill="currentColor"/>
-                        <path d="M5 6L5.5 7.5L7 8L5.5 8.5L5 10L4.5 8.5L3 8L4.5 7.5L5 6Z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <h2>¿Listo para transformar tu futuro?</h2>
-                <p>Únete a KommuniK Academy y desarrolla las habilidades de inglés que necesitas para destacar en el mundo profesional. Tu éxito comienza aquí.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-white btn-lg btn-modern">Acceder a la Plataforma</a>
-                    <a href="cursos.html" class="btn btn-outline-white btn-lg btn-modern">Ver Cursos</a>
                 </div>
             </div>
         </div>
@@ -528,80 +512,34 @@
                     </div>
                 </div>
                 
-                <!-- Sección de enlaces -->
-                <div class="footer-links-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li><a href="cursos.html"><i class="fas fa-book"></i> Cursos</a></li>
-                        <li><a href="testimonios.html"><i class="fas fa-comment-dots"></i> Testimonios</a></li>
-                        <li><a href="asesorias.html"><i class="fas fa-headset"></i> Asesorías</a></li>
-                        <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Sección de servicios -->
-                <div class="footer-services-section">
-                    <h4>Nuestros Cursos</h4>
-                    <ul class="footer-services-list">
-                        <li>
-                            <div class="service-icon"><i class="fas fa-headset"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés para Call Center</span>
-                                <span class="service-desc">4 semanas de entrenamiento especializado</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="service-icon"><i class="fas fa-comments"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés Conversacional</span>
-                                <span class="service-desc">2 niveles disponibles</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés General</span>
-                                <span class="service-desc">6 niveles desde A1 hasta C2</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Sección de contacto -->
-                <div class="footer-contact-section">
+                <!-- Sección consolidada de Contacto y Cursos (Compacta) -->
+                <div class="footer-info-compact">
+                    <!-- Contacto Simplificado -->
                     <h4>Contacto</h4>
-                    <div class="contact-info-modern">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Teléfono</span>
-                                <a href="tel:+18298949783">(829) 894-9783</a>
-                            </div>
+                    <div class="contact-info-minimal">
+                        <div class="contact-item-minimal">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+18298949783">(829) 894-9783</a>
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Email</span>
-                                <a href="mailto:info@kommunikacademy.com">info@kommunikacademy.com</a>
-                            </div>
+                        <div class="contact-item-minimal">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@kommunikacademy.com">info@kommunikacademy.com</a>
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Ubicación</span>
-                                <span>Santo Domingo, República Dominicana</span>
-                            </div>
+                        <div class="contact-item-minimal">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Santo Domingo, República Dominicana</span>
                         </div>
                     </div>
+
+                    <!-- Lista de Cursos Simplificada -->
+                    <h4>Nuestros Cursos</h4>
+                    <ul class="footer-course-list-minimal">
+                        <li><a href="cursos.html#callcenter">Inglés para Call Center</a></li>
+                        <li><a href="cursos.html#conversacional">Inglés Conversacional</a></li>
+                        <li><a href="cursos.html#general">Inglés General</a></li>
+                    </ul>
                 </div>
             </div>
             
@@ -609,7 +547,7 @@
             <div class="footer-bottom-modern">
                 <div class="footer-bottom-content">
                     <div class="footer-copyright">
-                        <p>&copy; 2025 KommuniK Academy. Todos los derechos reservados.</p>
+                        <p>© 2025 KommuniK Academy. Todos los derechos reservados.</p>
                         <div class="footer-subtitle">Transformando futuros a través del inglés</div>
                     </div>
                 </div>

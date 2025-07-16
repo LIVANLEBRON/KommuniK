@@ -1,501 +1,545 @@
-/* 
-   KommuniK Academy - Estilos mejorados para el footer
-   Versión 2.0 - Diseño moderno y profesional
-*/
-
-/* Estilos generales del footer */
-footer.footer-modern {
-    padding-top: 70px;
-    padding-bottom: 40px;
-    background: linear-gradient(135deg, #4a148c, #311b92);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-    border-top: 5px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
+/* Colores de ejemplo (Asegúrate de que estén definidos globalmente o en styles.css) */
+:root {
+    --primary-color: #6c63ff; /* Un tono vibrante de violeta/azul */
+    --secondary-color: #00bcd4; /* Un cian llamativo */
+    --accent-color: #a8d5e2;   /* Un azul claro sutil */
+    --dark-bg-color: #1a1a2e; /* Un gris oscuro casi negro para fondos */
+    --light-bg-color: #f8f9fa; /* Blanco roto para secciones claras */
+    --text-color-dark: #343a40; /* Gris oscuro para texto en fondos claros */
+    --text-color-light: #c0c0c0; /* Gris claro para texto en fondos oscuros */
+    --text-color-muted: #999;  /* Gris apagado para descripciones secundarias */
+    --heading-color: #fff;     /* Blanco para encabezados en fondos oscuros */
+    --border-color: rgba(255, 255, 255, 0.1); /* Bordes sutiles */
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-dark: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Formas decorativas de fondo */
-.footer-background {
+/* --- Base Footer Styles --- */
+.footer-modern {
+    position: relative;
+    background: var(--dark-bg-color, #1a1a2e); /* Fallback for --dark-bg-color */
+    color: var(--text-color-light, #c0c0c0); /* Fallback for --text-color-light */
+    padding-top: 60px;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.footer-modern .footer-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
     overflow: hidden;
+    z-index: -1;
+    opacity: 0.15;
 }
 
-.footer-shape {
+.footer-modern .footer-shape {
     position: absolute;
-    opacity: 0.05;
     border-radius: 50%;
+    background: radial-gradient(circle, var(--primary-color, #6c63ff) 0%, rgba(108, 99, 255, 0) 70%); /* Fallback for --primary-color */
+    filter: blur(100px);
 }
 
-.footer-shape-1 {
+.footer-modern .footer-shape-1 {
+    width: 250px;
+    height: 250px;
+    top: 20%;
+    left: -5%;
+}
+
+.footer-modern .footer-shape-2 {
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
-    top: -100px;
-    right: -50px;
-    animation: float 15s infinite ease-in-out;
+    bottom: 10%;
+    right: -10%;
+    background: radial-gradient(circle, var(--secondary-color, #00bcd4) 0%, rgba(0, 188, 212, 0) 70%); /* Fallback for --secondary-color */
 }
 
-.footer-shape-2 {
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
-    bottom: -50px;
-    left: 10%;
-    animation: float 20s infinite ease-in-out reverse;
-}
-
-.footer-shape-3 {
+.footer-modern .footer-shape-3 {
     width: 150px;
     height: 150px;
-    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
-    top: 30%;
-    left: 30%;
-    animation: float 25s infinite ease-in-out;
+    top: 5%;
+    right: 25%;
+    background: radial-gradient(circle, var(--accent-color, #a8d5e2) 0%, rgba(168, 213, 226, 0) 70%); /* Fallback for --accent-color */
 }
 
-@keyframes float {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(20px, 20px) rotate(5deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+.footer-modern h3,
+.footer-modern h4,
+.footer-modern h5 {
+    color: var(--heading-color, #fff); /* Fallback for --heading-color */
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-/* Contenedor principal del footer */
-.footer-content-modern {
+/* --- Main Footer Content Layout (NEW GRID LAYOUT) --- */
+.footer-modern .footer-content-modern {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    position: relative;
-    z-index: 1;
+    /* Ajusta la proporción: marca más espacio, info condensada a la derecha */
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px; /* Mayor espacio entre columnas */
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: flex-start; /* Alinea los ítems al inicio de su contenedor */
 }
 
-/* Estilos para la sección de marca */
-.footer-brand {
+/* --- Footer Brand Section --- */
+.footer-modern .footer-brand {
+    text-align: left;
     display: flex;
     flex-direction: column;
 }
 
-.footer-logo-container {
+.footer-modern .footer-logo-container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.footer-logo-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer-modern .footer-logo-icon {
+    font-size: 3rem;
+    color: var(--primary-color, #6c63ff); /* Fallback for --primary-color */
     margin-right: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
 }
 
-.footer-logo-icon svg {
-    width: 100%;
-    height: 100%;
-    color: white;
-}
-
-.footer-logo-icon:hover {
-    transform: translateY(-5px) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.footer-logo-text h3 {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0 0 5px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.footer-tagline {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    font-style: italic;
-}
-
-.footer-description {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Estadísticas en el footer */
-.footer-stats {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-
-.footer-stat {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.stat-label {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Estilos para las secciones de enlaces */
-.footer-links-section h4,
-.footer-services-section h4,
-.footer-contact-section h4 {
-    color: white;
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    position: relative;
-    padding-bottom: 12px;
-    font-weight: 600;
-}
-
-.footer-links-section h4:after,
-.footer-services-section h4:after,
-.footer-contact-section h4:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0));
-}
-
-/* Navegación en el footer */
-.footer-nav-list {
-    list-style: none;
-    padding: 0;
+.footer-modern .footer-logo-text h3 {
     margin: 0;
+    font-size: 1.8rem;
+    color: var(--heading-color, #fff);
 }
 
-.footer-nav-list li {
-    margin-bottom: 15px;
-}
-
-.footer-nav-list li a {
-    display: flex;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.footer-nav-list li a:hover {
-    color: white;
-    transform: translateX(5px);
-}
-
-.nav-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    margin-right: 10px;
-    font-size: 0.7rem;
-    transition: all 0.3s ease;
-}
-
-.footer-nav-list li a:hover .nav-icon {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
-}
-
-/* Lista de servicios */
-.footer-services-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-services-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.service-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    margin-right: 12px;
-    font-size: 0.85rem;
-    flex-shrink: 0;
-}
-
-.service-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.service-name {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.service-desc {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.8rem;
-    margin-top: 2px;
-}
-
-/* Información de contacto */
-.contact-info-modern {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-}
-
-.contact-icon {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    margin-right: 12px;
-    flex-shrink: 0;
-}
-
-.contact-icon svg {
-    width: 14px;
-    height: 14px;
-    color: white;
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-label {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.8rem;
-    margin-bottom: 3px;
-}
-
-.contact-details a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.contact-details a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-/* Redes sociales */
-.social-media-modern h5 {
-    color: white;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-}
-
-.social-link svg {
-    width: 14px;
-    height: 14px;
-    margin-right: 6px;
-}
-
-.social-link span {
+.footer-modern .footer-tagline {
     font-size: 0.9rem;
-}
-
-.social-link.instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    color: white;
-}
-
-.social-link.whatsapp:hover {
-    background: #25D366;
-    color: white;
-}
-
-/* Parte inferior del footer */
-.footer-bottom-modern {
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    z-index: 1;
-}
-
-.footer-bottom-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-copyright p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.footer-subtitle {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.8rem;
+    color: var(--text-color-muted, #999); /* Fallback for --text-color-muted */
     margin-top: 5px;
 }
 
-.footer-certifications {
-    display: flex;
-    gap: 15px;
+.footer-modern .footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-.certification-badge {
+.footer-modern .social-media-modern h5 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--heading-color, #fff);
+}
+
+.footer-modern .social-media-modern .social-links {
     display: flex;
+    gap: 15px; /* Espaciado entre los enlaces sociales */
+}
+
+.footer-modern .social-media-modern .social-link {
+    display: inline-flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color-light, #c0c0c0);
+    text-decoration: none;
     padding: 8px 15px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-.certification-badge:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-3px);
-}
-
-.cert-icon {
-    margin-right: 8px;
-    font-size: 0.9rem;
-}
-
-.cert-text {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.8rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 0.95rem;
     font-weight: 500;
 }
 
-/* Diseño responsivo */
+.footer-modern .social-media-modern .social-link i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.footer-modern .social-media-modern .social-link:hover {
+    background: var(--primary-color, #6c63ff);
+    color: #fff;
+}
+.footer-modern .social-media-modern .social-link.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+}
+.footer-modern .social-media-modern .social-link.whatsapp:hover {
+    background: #25D366;
+    color: #fff;
+}
+
+
+/* --- Consolidated Info Section (NEW STYLES) --- */
+.footer-modern .footer-info-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre Contacto y Cursos */
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.06); /* Ligeramente oscuro para destacar */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer-modern .footer-info-compact h4 {
+    color: var(--primary-color, #6c63ff); /* Fallback for --primary-color */
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Separador sutil */
+}
+
+/* --- Minimal Contact Info --- */
+.footer-modern .contact-info-minimal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espacio entre los ítems de contacto */
+}
+
+.footer-modern .contact-item-minimal {
+    display: flex;
+    align-items: center;
+    color: var(--text-color-light, #c0c0c0);
+    font-size: 0.95rem;
+}
+
+.footer-modern .contact-item-minimal i {
+    color: var(--accent-color, #a8d5e2); /* Fallback for --accent-color */
+    margin-right: 15px;
+    font-size: 1.1rem;
+    width: 20px; /* Asegura alineación consistente para los íconos */
+    text-align: center;
+}
+
+.footer-modern .contact-item-minimal a,
+.footer-modern .contact-item-minimal span {
+    color: inherit; /* Hereda el color del padre para consistencia */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-modern .contact-item-minimal a:hover {
+    color: var(--primary-color, #6c63ff);
+}
+
+/* --- Minimal Course List --- */
+.footer-modern .footer-course-list-minimal {
+    list-style: none; /* Elimina viñetas predeterminadas */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre enlaces de cursos */
+}
+
+.footer-modern .footer-course-list-minimal li {
+    padding-left: 0;
+}
+
+.footer-modern .footer-course-list-minimal li a {
+    color: var(--text-color-light, #c0c0c0);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.footer-modern .footer-course-list-minimal li a:before {
+    content: "•"; /* Viñeta personalizada para los enlaces de cursos */
+    color: var(--primary-color, #6c63ff);
+    margin-right: 10px;
+    font-size: 1.2em;
+    line-height: 1; /* Ajuste vertical de la viñeta */
+}
+
+.footer-modern .footer-course-list-minimal li a:hover {
+    color: var(--primary-color, #6c63ff);
+}
+
+
+/* --- Footer Bottom Section --- */
+.footer-modern .footer-bottom-modern {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.footer-modern .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en pantallas pequeñas */
+}
+
+.footer-modern .footer-copyright {
+    flex-grow: 1; /* Permite que el copyright ocupe el espacio restante */
+    text-align: center;
+}
+
+.footer-modern .footer-copyright p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color-muted, #999);
+}
+
+.footer-modern .footer-subtitle {
+    font-size: 0.8rem;
+    color: var(--primary-color, #6c63ff);
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+
+/* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-    .footer-content-modern {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .footer-modern .footer-content-modern {
+        grid-template-columns: 1fr; /* Apila las columnas en pantallas más pequeñas */
         gap: 30px;
+        padding-bottom: 30px;
     }
 }
 
 @media (max-width: 768px) {
-    .footer-content-modern {
-        grid-template-columns: 1fr;
-        text-align: center;
+    .footer-modern {
+        padding-top: 40px;
     }
-    
-    .footer-logo-container {
-        justify-content: center;
+    .footer-modern .footer-logo-icon {
+        font-size: 2.5rem;
     }
-    
-    .footer-links-section h4:after,
-    .footer-services-section h4:after,
-    .footer-contact-section h4:after {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0));
+    .footer-modern .footer-logo-text h3 {
+        font-size: 1.5rem;
     }
-    
-    .footer-nav-list li a,
-    .footer-services-list li,
-    .contact-item {
-        justify-content: center;
-    }
-    
-    .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .footer-stats {
-        justify-content: center;
+    .footer-modern .social-media-modern .social-links {
+        justify-content: center; /* Centra los enlaces sociales en móvil */
+        flex-wrap: wrap; /* Permite que se envuelvan */
     }
 }
 
-/* Botón flotante de WhatsApp */
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 100;
+@media (max-width: 576px) {
+    .footer-modern .footer-bottom-content {
+        flex-direction: column;
+        gap: 15px; /* Espacio entre copyright y redes en móvil */
+    }
+    .footer-modern .footer-brand {
+        align-items: center; /* Centra el contenido de la marca */
+        text-align: center;
+    }
+    .footer-modern .footer-logo-container {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .footer-modern .footer-logo-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .footer-modern .footer-info-compact {
+        padding: 20px;
+    }
+    .footer-modern .footer-info-compact h4 {
+        text-align: center;
+    }
+    .footer-modern .footer-copyright p,
+    .footer-modern .footer-subtitle {
+        font-size: 0.85rem;
+    }
+}
+/* --- Variables de colores específicos para los elementos flotantes --- */
+:root {
+    --floating-purple: #8432b0;
+    --floating-orange: #f58220;
+    --floating-blue-light: #2d9cf0;
+    --floating-green: #3ab167;
+    --floating-green-dark: #2a8a4f;
+    --floating-grey-blue: #708492;
+    --floating-brown: #a08151; /* Un color cercano al de la imagen para el círculo vacío */
+    --floating-tiny-green: #2ecc71; /* Para el círculo verde pequeño */
+}
+
+/* ------------------------------------------ */
+/* --- General Floating Elements for Portada --- */
+/* ------------------------------------------ */
+.floating-elements-portada {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Permite que el click atraviese los elementos */
+    z-index: 1; /* Para que queden entre el fondo y el contenido principal */
+    overflow: hidden; /* Oculta elementos que salgan de los límites */
+}
+
+.floating-elements-portada .floating-element {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    font-size: 1.5rem; /* Tamaño general de los iconos */
+    color: white;
+    opacity: 0.8;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)); /* Sombra para dar profundidad */
+    animation: floatAnimation 15s ease-in-out infinite; /* Animación de flotar */
+    cursor: default; /* Evita que el cursor cambie a "puntero" */
 }
 
-.whatsapp-float:hover {
-    background-color: #20ba5a;
-    transform: scale(1.1);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+/* Keyframes de animación (reusados de animations.css o definidos aquí) */
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-15px) translateX(10px); }
+    50% { transform: translateY(0) translateX(-10px); }
+    75% { transform: translateY(15px) translateX(10px); }
 }
 
-.whatsapp-float i {
-    margin-top: 2px;
+/* ------------------------------------------ */
+/* --- Specific Sparkle Element Style --- */
+/* ------------------------------------------ */
+.floating-elements-portada .fe-main-sparkle {
+    width: 90px; /* Tamaño del contenedor del icono principal */
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente para la chispa */
+    border-radius: 18px; /* Bordes redondeados del recuadro */
+    top: 15%; /* Ajusta según la imagen */
+    left: 45%; /* Ajusta según la imagen */
+    font-size: 2rem; /* Tamaño de la chispa SVG */
+    animation-duration: 20s; /* Más lento */
+    opacity: 0.9;
+}
+
+/* ------------------------------------------ */
+/* --- General Circle Element Styles --- */
+/* ------------------------------------------ */
+.floating-elements-portada .fe-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Sombra para los círculos */
+}
+
+/* --- Specific Positions & Colors for Floating Circles --- */
+
+/* fe-circle-1 (Top-Left, Chat) */
+.floating-elements-portada .fe-circle-1 {
+    top: 18%;
+    left: 10%;
+    background-color: var(--floating-purple);
+    animation-delay: 0s;
+    animation-duration: 16s;
+}
+
+/* fe-circle-2 (Top-Right, Redo) */
+.floating-elements-portada .fe-circle-2 {
+    top: 12%;
+    right: 25%; /* Ajusta para que quede a la derecha de las chispas */
+    background-color: var(--floating-orange);
+    animation-delay: 2s;
+    animation-duration: 18s;
+}
+
+/* fe-circle-3 (Top-Extreme-Right, Globe) */
+.floating-elements-portada .fe-circle-3 {
+    top: 10%;
+    right: 12%;
+    background-color: var(--floating-blue-light);
+    animation-delay: 4s;
+    animation-duration: 17s;
+}
+
+/* fe-circle-4 (Mid-Left, Clipboard) */
+.floating-elements-portada .fe-circle-4 {
+    top: 40%;
+    left: 8%;
+    background-color: var(--floating-green);
+    animation-delay: 6s;
+    animation-duration: 19s;
+}
+
+/* fe-circle-5 (Mid-Right, Headset) */
+.floating-elements-portada .fe-circle-5 {
+    top: 55%;
+    right: 10%;
+    background-color: var(--floating-green-dark);
+    animation-delay: 8s;
+    animation-duration: 15s;
+}
+
+/* fe-circle-6 (Bottom-Left, Thumbs Up) */
+.floating-elements-portada .fe-circle-6 {
+    bottom: 10%;
+    left: 20%;
+    background-color: var(--floating-grey-blue);
+    animation-delay: 10s;
+    animation-duration: 20s;
+}
+
+/* fe-circle-7 (Brown Empty Circle) */
+.floating-elements-portada .fe-circle-7 {
+    width: 45px; /* Un poco más pequeño que el resto */
+    height: 45px;
+    top: 35%; /* Cercano a la cabeza de la h de "transformar" */
+    left: 33%;
+    background-color: var(--floating-brown);
+    animation-delay: 12s;
+    animation-duration: 16s;
+}
+
+/* fe-circle-8 (Tiny Green Circle) */
+.floating-elements-portada .fe-circle-8 {
+    width: 25px; /* Pequeño */
+    height: 25px;
+    bottom: 25%;
+    right: 35%; /* Cercano a los botones */
+    background-color: var(--floating-tiny-green);
+    animation-delay: 14s;
+    animation-duration: 14s;
+    opacity: 0.6;
+}
+
+/* ------------------------------------------ */
+/* --- Responsive adjustments for Floating Elements --- */
+/* ------------------------------------------ */
+@media (max-width: 992px) {
+    .floating-elements-portada .floating-element {
+        font-size: 1.2rem;
+        filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+    }
+    .floating-elements-portada .fe-main-sparkle {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+        top: 10%; /* Ajustes para móviles */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .floating-elements-portada .fe-circle {
+        width: 40px;
+        height: 40px;
+    }
+    .floating-elements-portada .fe-circle-1 { top: 10%; left: 5%; }
+    .floating-elements-portada .fe-circle-2 { top: 8%; right: 20%; }
+    .floating-elements-portada .fe-circle-3 { top: 5%; right: 5%; }
+    .floating-elements-portada .fe-circle-4 { top: 35%; left: 3%; }
+    .floating-elements-portada .fe-circle-5 { top: 60%; right: 5%; }
+    .floating-elements-portada .fe-circle-6 { bottom: 15%; left: 10%; }
+    .floating-elements-portada .fe-circle-7 { top: 30%; left: 40%; width: 35px; height: 35px; }
+    .floating-elements-portada .fe-circle-8 { bottom: 20%; right: 25%; width: 20px; height: 20px; }
+}
+
+@media (max-width: 768px) {
+    .floating-elements-portada {
+        opacity: 0.7; /* Ligeramente más transparentes en pantallas pequeñas */
+    }
+    .floating-elements-portada .fe-main-sparkle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        top: 5%;
+        left: 50%;
+    }
+    .floating-elements-portada .fe-circle {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+    }
+    /* Puedes ocultar algunos elementos para simplificar la vista en móviles */
+    .floating-elements-portada .fe-circle-3,
+    .floating-elements-portada .fe-circle-6 {
+        display: none;
+    }
 }
