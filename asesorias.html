@@ -3,930 +3,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesorías | KommuniK Academy</title>
-    <link rel="icon" href="logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/floating-elements.css">
-    <link rel="stylesheet" href="css/header-adjustments.css">
-    <link rel="stylesheet" href="css/footer-styles.css">
-    <link rel="stylesheet" href="css/courses-styles.css">
+    <title>Asesorías - KommuniK Academy</title>
+    <link rel="icon" href="logo.ico">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Asesorías Page Specific Styles */
-        /* Asegurando que los estilos del footer sean consistentes */
-        footer.footer-modern {
-            padding-top: 70px;
-            padding-bottom: 40px;
-            background: linear-gradient(135deg, #4a148c, #311b92);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-            border-top: 5px solid rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        :root {
-            --primary-color: #6a1b9a;
-            --primary-light: #9c4dcc;
-            --primary-dark: #38006b;
-            --secondary-color: #8e24aa;
-            --white: #ffffff;
-            --light-gray: #f5f5f5;
-            --gray: #e0e0e0;
-            --dark-gray: #757575;
-            --text-color: #333333;
-            --text-light: #757575;
-            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-            --border-radius-sm: 4px;
-            --border-radius-md: 8px;
-            --border-radius-lg: 16px;
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 4rem;
-            --font-primary: 'Poppins', sans-serif;
-        }
-
-        .page-header {
-            background: linear-gradient(rgba(106, 27, 154, 0.8), rgba(106, 27, 154, 0.9)), url('images/asesorias-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 8rem 0 4rem;
+        /* Estilos para la página de asesorías */
+        .asesorias-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
             text-align: center;
-            position: relative;
+        }
+        
+        .asesorias-intro p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
             overflow: hidden;
-        }
-        
-        .page-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 70px;
-            background: linear-gradient(to right bottom, transparent 49%, var(--white) 50%);
-        }
-        
-        .service-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: var(--border-radius-md);
-            margin-bottom: var(--spacing-sm);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-        
-        .service-img:hover {
-            transform: scale(1.03);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            margin-bottom: var(--spacing-sm);
-            font-size: 3rem;
-            font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .section-badge {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(106, 27, 154, 0.2);
-        }
-        
-        .asesorias-section {
-            padding: var(--spacing-xl) 0;
-            background-color: var(--light-gray);
-            position: relative;
-        }
-        
-        .asesorias-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            z-index: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        
+        .service-icon i {
+            font-size: 30px;
+            color: #fff;
+        }
+        
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .service-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-description {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+        
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        
+        .service-feature i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        .service-cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .asesorias-personalizadas {
+            background-color: #f9f7ff;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
         }
         
         .asesorias-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-xl);
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .asesorias-text {
             flex: 1;
             min-width: 300px;
-            position: relative;
-        }
-        
-        .asesorias-text h3 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: var(--spacing-md);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .asesorias-text h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-        }
-        
-        .asesorias-text p {
-            margin-bottom: var(--spacing-md);
-            line-height: 1.7;
-            color: var(--text-color);
         }
         
         .asesorias-image {
             flex: 1;
             min-width: 300px;
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            z-index: 1;
+            text-align: center;
         }
         
         .asesorias-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
+            max-width: 100%;
+            border-radius: 10px;
         }
         
-        .asesorias-image:hover img {
-            transform: scale(1.05);
+        .asesorias-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
         }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-xl);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .service-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius-md);
-            padding: var(--spacing-lg);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--primary-color);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .service-card:hover::before {
-            opacity: 0.02;
-        }
-        
-        .service-icon {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--spacing-md);
-            box-shadow: 0 5px 15px rgba(106, 27, 154, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .service-icon i {
-            font-size: 48px;
-            color: white;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .service-card:hover .service-icon {
-            transform: rotateY(180deg);
-        }
-        
-        .service-card h3 {
-            margin-bottom: var(--spacing-sm);
-            color: var(--primary-dark);
-            font-weight: 600;
-            font-size: 1.4rem;
-        }
-        
-        .service-card p {
-            color: var(--text-color);
-            margin-bottom: var(--spacing-md);
+        .asesorias-text {
+            color: #444;
+            margin-bottom: 25px;
             line-height: 1.6;
         }
         
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: var(--spacing-md);
-            text-align: left;
-        }
-        
-        .service-card ul li {
-            padding-left: 1.5rem;
-            position: relative;
-            margin-bottom: var(--spacing-sm);
-            color: var(--text-color);
-        }
-        
-        .service-card ul li:before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
+        .asesorias-highlight {
             color: var(--primary-color);
-            position: absolute;
-            left: 0;
-        }
-        
-        .btn-outline {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 2px solid var(--primary-color);
-            border-radius: var(--border-radius-md);
-            color: var(--primary-color);
-            font-weight: 500;
-            text-align: center;
-            transition: all 0.3s ease;
-            background-color: transparent;
-            text-decoration: none;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(106, 27, 154, 0.2);
-        }
-        
-        .contact-section {
-            padding: var(--spacing-xl) 0;
-            background-color: var(--white);
-            position: relative;
-        }
-        
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(106, 27, 154, 0.03), rgba(142, 36, 170, 0.03));
-            z-index: 0;
-        }
-        
-        .contact-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-xl);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .contact-option {
-            flex: 1;
-            min-width: 250px;
-            background-color: var(--white);
-            border-radius: var(--border-radius-md);
-            padding: var(--spacing-lg);
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-        
-        .contact-option:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            border-bottom: 3px solid var(--primary-light);
-        }
-        
-        .contact-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--spacing-md);
-            box-shadow: 0 5px 15px rgba(106, 27, 154, 0.3);
-        }
-        
-        .contact-icon i {
-            font-size: 32px;
-            color: white;
-        }
-        
-        .contact-option h3 {
-            margin-bottom: var(--spacing-sm);
-            color: var(--primary-dark);
             font-weight: 600;
-        }
-        
-        .contact-option p {
-            margin-bottom: var(--spacing-md);
-            color: var(--text-color);
-        }
-        
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: var(--white);
-            border-radius: var(--border-radius-md);
-            padding: 0.75rem 1.5rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .whatsapp-btn i {
-            margin-right: var(--spacing-sm);
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-        }
-        
-        .faq-section {
-            padding: var(--spacing-xl) 0;
-            background-color: var(--light-gray);
-            position: relative;
-        }
-        
-        .faq-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            z-index: 0;
         }
         
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
         
         .faq-item {
-            background-color: var(--white);
-            border-radius: var(--border-radius-md);
-            margin-bottom: var(--spacing-md);
-            box-shadow: var(--shadow-sm);
+            background-color: #fff;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
             overflow: hidden;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-        }
-        
-        .faq-item:hover {
-            box-shadow: var(--shadow-md);
-        }
-        
-        .faq-item.active {
-            border-left: 3px solid var(--primary-color);
         }
         
         .faq-question {
-            padding: var(--spacing-md);
+            padding: 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
-            color: var(--primary-dark);
-            transition: all 0.3s ease;
         }
         
-        .faq-question:hover {
-            background-color: rgba(106, 27, 154, 0.05);
-        }
-        
-        .faq-question i {
-            transition: transform 0.3s ease;
-            color: var(--primary-color);
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
+        .faq-question h4 {
+            margin: 0;
+            font-size: 1.1rem;
         }
         
         .faq-answer {
-            padding: 0 var(--spacing-md);
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            color: var(--text-color);
-            line-height: 1.6;
+            padding: 0 20px 20px;
+            display: none;
         }
         
         .faq-item.active .faq-answer {
-            padding: 0 var(--spacing-md) var(--spacing-md);
-            max-height: 500px;
+            display: block;
         }
         
-        @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-options {
-                flex-direction: column;
-            }
-            
-            .contact-option {
-                margin-bottom: var(--spacing-md);
-            }
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
         }
     </style>
 </head>
 <body>
-    <!-- Header con navegación -->
+    <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="index.html">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
                     <img src="logo.ico" alt="KommuniK Academy Logo">
-                    <span>KommuniK Academy</span>
+                    <h1>KommuniK Academy</h1>
                 </a>
-            </div>
-            <nav>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="cursos.html">Cursos</a></li>
-                    <li><a href="testimonios.html">Testimonios</a></li>
-                    <li><a href="asesorias.html" class="active">Asesorías</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li class="platform-btn"><a href="#" class="btn btn-primary">Acceder a la Plataforma</a></li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cursos.html" class="nav-link">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="testimonios.html" class="nav-link">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="asesorias.html" class="nav-link active">Asesorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contacto.html" class="nav-link">Contacto</a>
+                    </li>
                 </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <!-- Elementos animados flotantes -->
-        <div class="floating-elements">
-            <div class="floating-element element-1"><i class="fas fa-comment-dots"></i></div>
-            <div class="floating-element element-2"><i class="fas fa-book"></i></div>
-            <div class="floating-element element-3"><i class="fas fa-graduation-cap"></i></div>
-            <div class="floating-element element-4"><i class="fas fa-globe-americas"></i></div>
-            <div class="floating-element element-5"><i class="fas fa-headset"></i></div>
-            <div class="floating-element element-6"><i class="fas fa-laptop"></i></div>
-            <div class="floating-element element-7">A</div>
-            <div class="floating-element element-8">B</div>
-            <div class="floating-element element-9">C</div>
-            <div class="floating-element element-10"><i class="fas fa-star"></i></div>
-            <div class="floating-element element-11"><i class="fas fa-certificate"></i></div>
-            <div class="floating-element element-12"><i class="fas fa-lightbulb"></i></div>
-        </div>
-        
-        <div class="container" style="position: relative; z-index: 2;">
-            <h1>Asesorías</h1>
-            <p>Servicios personalizados para potenciar tu inglés</p>
-            <div class="hero-buttons">
-                <a href="cursos.html" class="btn btn-secondary btn-lg animate-fade-in">Ver Cursos</a>
+    <!-- Page Banner -->
+    <section class="hero" style="height: 50vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Asesorías Personalizadas</h1>
+                <p class="hero-subtitle">Atención individual para necesidades específicas</p>
             </div>
         </div>
     </section>
 
-    <!-- Asesorías Main Section -->
-    <section class="asesorias-section">
+    <!-- Asesorías Intro -->
+    <section class="section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-badge">Servicios Personalizados</span>
-                <h2>Nuestros Servicios de Asesoría</h2>
-                <div class="separator"></div>
-                <p>En KommuniK Academy ofrecemos asesorías personalizadas para ayudarte a alcanzar tus objetivos específicos con el idioma inglés</p>
+            <div class="asesorias-intro">
+                <p>Nuestro servicio de asesoría está diseñado como complemento a tus necesidades específicas, ya sea que necesites preparación para una entrevista de trabajo, mejorar tu pronunciación o desarrollar habilidades específicas para tu carrera profesional.</p>
             </div>
-            
-            <div class="asesorias-content">
-                <div class="asesorias-text">
-                    <h3>Asesoría Personalizada</h3>
-                    <p>Nuestro servicio de asesoría está diseñado para adaptarse a tus necesidades específicas, ya sea que necesites prepararte para una entrevista de trabajo, mejorar tu pronunciación o desarrollar habilidades específicas para tu campo profesional.</p>
-                    
-                    <p>Trabajamos contigo para identificar tus áreas de oportunidad y crear un plan personalizado que te ayude a alcanzar tus metas en el menor tiempo posible.</p>
-                    
-                    <p>Nuestros asesores son profesionales con amplia experiencia en la enseñanza del inglés y están certificados para brindarte la mejor orientación.</p>
-                    
-                    <a href="#contact-options" class="btn btn-primary"><i class="fas fa-headset"></i> Solicitar Asesoría</a>
-                </div>
-                <div class="asesorias-image" style="display: flex; align-items: center; justify-content: center;">
-                    <div style="background: linear-gradient(135deg, #9c27b0, #673ab7); height: 280px; width: 280px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 30px rgba(106, 27, 154, 0.3); position: relative; overflow: hidden;">
-                        <div style="position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);"></div>
-                        <i class="fas fa-chalkboard-teacher" style="font-size: 120px; color: white; text-shadow: 0 4px 8px rgba(0,0,0,0.3); position: relative; z-index: 2;"></i>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="service-cards">
+                <!-- Servicio 1: Asesoría para Entrevistas -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="service-title">Asesoría para Entrevistas</h3>
+                        <p class="service-subtitle">Prepárate para destacar en entrevistas en inglés</p>
+                    </div>
+                    <div class="service-body">
+                        <p class="service-description">Te ayudamos a prepararte para entrevistas laborales en inglés, mejorando tu confianza y habilidades de comunicación profesional.</p>
+                        <ul class="service-features">
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Simulación de entrevistas reales</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Vocabulario específico para tu industria</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Técnicas para responder preguntas difíciles</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service-cta">
+                        <a href="contacto.html" class="btn">Solicitar información</a>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Services Grid -->
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card reveal reveal-up">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #9575cd, #5e35b1); height: 120px; width: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-user-tie" style="font-size: 48px; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.2);"></i>
+                <!-- Servicio 2: Asesoría de Pronunciación -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <h3 class="service-title">Asesoría de Pronunciación</h3>
+                        <p class="service-subtitle">Mejora tu acento y fluidez al hablar</p>
                     </div>
-                    <h3>Preparación para Entrevistas</h3>
-                    <p>Simulaciones de entrevistas en inglés con retroalimentación detallada para mejorar tus habilidades y confianza.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Vocabulario específico para entrevistas</li>
-                        <li><i class="fas fa-check-circle"></i> Simulación de entrevistas reales</li>
-                        <li><i class="fas fa-check-circle"></i> Técnicas para responder preguntas difíciles</li>
-                        <li><i class="fas fa-check-circle"></i> Retroalimentación detallada</li>
-                    </ul>
-                    <a href="#contact-options" class="btn btn-outline"><i class="fas fa-info-circle"></i> Más información</a>
+                    <div class="service-body">
+                        <p class="service-description">Sesiones personalizadas enfocadas en mejorar tu pronunciación, entonación y ritmo para sonar más natural al hablar inglés.</p>
+                        <ul class="service-features">
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Ejercicios específicos de fonética</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Corrección personalizada de errores comunes</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Técnicas para reducir el acento</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service-cta">
+                        <a href="contacto.html" class="btn">Solicitar información</a>
+                    </div>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card reveal reveal-up">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #7e57c2, #4527a0); height: 120px; width: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-microphone-alt" style="font-size: 48px; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.2);"></i>
+                <!-- Servicio 3: Inglés para Profesionales -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="service-title">Inglés para Profesionales</h3>
+                        <p class="service-subtitle">Especializado para tu campo laboral</p>
                     </div>
-                    <h3>Mejora de Pronunciación</h3>
-                    <p>Sesiones enfocadas en mejorar tu pronunciación y reducir el acento para una comunicación más efectiva.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Técnicas de fonética y entonación</li>
-                        <li><i class="fas fa-check-circle"></i> Ejercicios prácticos personalizados</li>
-                        <li><i class="fas fa-check-circle"></i> Grabaciones para autoevaluación</li>
-                        <li><i class="fas fa-check-circle"></i> Seguimiento continuo de progreso</li>
-                    </ul>
-                    <a href="#contact-options" class="btn btn-outline"><i class="fas fa-info-circle"></i> Más información</a>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card reveal reveal-up">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #673ab7, #311b92); height: 120px; width: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-briefcase" style="font-size: 48px; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.2);"></i>
+                    <div class="service-body">
+                        <p class="service-description">Asesoría adaptada a las necesidades específicas de tu profesión o industria, con vocabulario técnico y situaciones comunicativas relevantes.</p>
+                        <ul class="service-features">
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Vocabulario técnico especializado</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Comunicación efectiva en reuniones</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Redacción de correos y documentos profesionales</span>
+                            </li>
+                        </ul>
                     </div>
-                    <h3>Inglés para Negocios</h3>
-                    <p>Aprende vocabulario especializado y expresiones comunes utilizadas en el mundo empresarial.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Comunicación efectiva en reuniones</li>
-                        <li><i class="fas fa-check-circle"></i> Redacción de correos profesionales</li>
-                        <li><i class="fas fa-check-circle"></i> Presentaciones efectivas</li>
-                        <li><i class="fas fa-check-circle"></i> Negociación en inglés</li>
-                    </ul>
-                    <a href="#contact-options" class="btn btn-outline"><i class="fas fa-info-circle"></i> Más información</a>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card reveal reveal-up">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
+                    <div class="service-cta">
+                        <a href="contacto.html" class="btn">Solicitar información</a>
                     </div>
-                    <h3>Preparación para Call Centers</h3>
-                    <p>Asesoría especializada para desarrollar las habilidades necesarias para trabajar en call centers internacionales.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Manejo de llamadas difíciles</li>
-                        <li><i class="fas fa-check-circle"></i> Vocabulario técnico específico</li>
-                        <li><i class="fas fa-check-circle"></i> Resolución de problemas</li>
-                        <li><i class="fas fa-check-circle"></i> Servicio al cliente de excelencia</li>
-                    </ul>
-                    <a href="#contact-options" class="btn btn-outline"><i class="fas fa-info-circle"></i> Más información</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Options -->
-    <section class="contact-section" id="contact-options">
+    <!-- Asesorías Personalizadas -->
+    <section class="section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-badge">Contáctanos</span>
-                <h2>¿Cómo Podemos Ayudarte?</h2>
-                <div class="separator"></div>
-                <p>Elige la opción que mejor se adapte a tus necesidades</p>
-            </div>
-            
-            <div class="contact-options">
-                <!-- Option 1 -->
-                <div class="contact-option reveal reveal-left">
-                    <div class="contact-icon">
-                        <i class="fab fa-whatsapp"></i>
+            <h2 class="section-title">Metodología Personalizada</h2>
+            <div class="asesorias-personalizadas">
+                <div class="asesorias-content">
+                    <h3 class="asesorias-title">Enfoque 100% Virtual y Personalizado</h3>
+                    <p class="asesorias-text">Todas nuestras asesorías se realizan de manera virtual, adaptándonos a tu horario y necesidades específicas. Nuestro enfoque personalizado garantiza que recibas exactamente la ayuda que necesitas para alcanzar tus objetivos.</p>
+                    <p class="asesorias-highlight">Cada sesión está diseñada exclusivamente para ti, con materiales y ejercicios adaptados a tu nivel, objetivos y área de interés.</p>
+                    <div class="service-cta" style="text-align: left; margin-top: 30px;">
+                        <a href="contacto.html" class="btn">Agenda tu asesoría</a>
                     </div>
-                    <h3>WhatsApp</h3>
-                    <p>Contáctanos directamente por WhatsApp para una respuesta rápida y personalizada.</p>
-                    <a href="https://wa.me/18298949783?text=Hola%2C%20estoy%20interesado%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20asesor%C3%ADas%20de%20KommuniK%20Academy.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" class="whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Enviar mensaje
-                    </a>
                 </div>
-                
-                <!-- Option 2 -->
-                <div class="contact-option reveal reveal-right">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Formulario de Contacto</h3>
-                    <p>Completa nuestro formulario y te contactaremos a la brevedad.</p>
-                    <a href="contacto.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Ir al formulario</a>
+                <div class="asesorias-image">
+                    <img src="img/asesorias.jpg" alt="Asesorías Personalizadas">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    <!-- Preguntas Frecuentes -->
+    <section class="section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-badge">Dudas Comunes</span>
-                <h2>Preguntas Frecuentes</h2>
-                <div class="separator"></div>
-                <p>Respuestas a las dudas más comunes sobre nuestros servicios de asesoría</p>
-            </div>
-            
+            <h2 class="section-title">Preguntas Frecuentes</h2>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3><i class="fas fa-clock"></i> ¿Cuánto duran las sesiones de asesoría?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        <h4>¿Cómo se realizan las asesorías?</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Nuestras sesiones de asesoría tienen una duración de 60 minutos. Sin embargo, podemos ajustar la duración según tus necesidades específicas.</p>
+                        <p>Todas nuestras asesorías se realizan de manera 100% virtual a través de plataformas como Zoom o Google Meet. Esto te permite conectarte desde cualquier lugar y recibir atención personalizada sin necesidad de desplazarte.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3><i class="fas fa-chart-line"></i> ¿Cuántas sesiones necesito para ver resultados?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        <h4>¿Cuánto duran las sesiones de asesoría?</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>El número de sesiones varía según tus objetivos y nivel actual. Durante la primera sesión, evaluaremos tu nivel y estableceremos un plan personalizado con un estimado de sesiones necesarias.</p>
+                        <p>Las sesiones de asesoría tienen una duración de 50 minutos. Puedes programar sesiones individuales o paquetes de varias sesiones según tus necesidades específicas.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3><i class="fas fa-video"></i> ¿Las asesorías son presenciales o virtuales?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        <h4>¿Cómo puedo agendar una asesoría?</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Ofrecemos ambas modalidades. Puedes elegir entre sesiones presenciales en nuestra academia o sesiones virtuales a través de Zoom o Google Meet, según tu preferencia y disponibilidad.</p>
+                        <p>Para agendar una asesoría, simplemente completa el formulario en nuestra página de contacto o envíanos un mensaje directo a través de WhatsApp. Nuestro equipo se pondrá en contacto contigo para coordinar los detalles y horarios disponibles.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3><i class="fas fa-graduation-cap"></i> ¿Qué nivel de inglés necesito para tomar una asesoría?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        <h4>¿Qué nivel de inglés necesito para tomar una asesoría?</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Nuestras asesorías están disponibles para todos los niveles, desde principiantes hasta avanzados. Adaptamos el contenido y la metodología según tu nivel actual.</p>
+                        <p>Nuestras asesorías están disponibles para todos los niveles, desde principiantes hasta avanzados. El contenido y enfoque se adaptarán a tu nivel actual y necesidades específicas.</p>
                     </div>
                 </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3><i class="fas fa-dollar-sign"></i> ¿Cuál es el costo de las asesorías?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>El costo varía según el tipo de asesoría y el número de sesiones. Contáctanos para recibir información detallada sobre nuestros precios y paquetes disponibles.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content text-center">
-                <span class="section-badge">Comienza Hoy</span>
-                <h2>¿Listo para mejorar tu inglés?</h2>
-                <p>Contáctanos hoy mismo y comienza tu camino hacia la fluidez en el idioma inglés</p>
-                <a href="contacto.html" class="btn btn-primary btn-lg"><i class="fas fa-rocket"></i> Contáctanos Ahora</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer-modern">
-        <div class="footer-background">
-            <div class="footer-shape footer-shape-1"></div>
-            <div class="footer-shape footer-shape-2"></div>
-            <div class="footer-shape footer-shape-3"></div>
-        </div>
-        
+    <footer>
         <div class="container">
-            <div class="footer-content-modern">
-                <!-- Sección de marca -->
-                <div class="footer-brand">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-                                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
-                            </svg>
-                        </div>
-                        <div class="footer-logo-text">
-                            <h3>KommuniK Academy</h3>
-                            <div class="footer-tagline">Transformando futuros a través del inglés</div>
-                        </div>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="logo.ico" alt="KommuniK Academy Logo" width="40">
+                        <h3>KommuniK Academy</h3>
                     </div>
-                    
-                    <div class="footer-description">
-                        Somos una academia especializada en la enseñanza del idioma inglés, con programas diseñados para desarrollar habilidades prácticas y efectivas para el mundo profesional actual.
-                    </div>
-                    
-                    <div class="social-media-modern">
-                        <h5>Síguenos</h5>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/KommuniKAcademy" target="_blank" class="social-link instagram">
-                                <i class="fab fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a href="https://wa.me/18298949783" target="_blank" class="social-link whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                        </div>
+                    <p>Academia de inglés 100% virtual con clases personalizadas y profesores certificados.</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/kommunikacademy" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/18298949783" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
-                <!-- Sección de enlaces -->
-                <div class="footer-links-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li><a href="cursos.html"><i class="fas fa-book"></i> Cursos</a></li>
-                        <li><a href="testimonios.html"><i class="fas fa-comment-dots"></i> Testimonios</a></li>
-                        <li><a href="asesorias.html"><i class="fas fa-headset"></i> Asesorías</a></li>
-                        <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Sección de servicios -->
-                <div class="footer-services-section">
-                    <h4>Nuestros Cursos</h4>
-                    <ul class="footer-services-list">
-                        <li>
-                            <div class="service-icon"><i class="fas fa-headset"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés para Call Center</span>
-                                <span class="service-desc">4 semanas de entrenamiento especializado</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="service-icon"><i class="fas fa-comments"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés Conversacional</span>
-                                <span class="service-desc">2 niveles disponibles</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés General</span>
-                                <span class="service-desc">6 niveles desde A1 hasta C2</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Sección de contacto -->
-                <div class="footer-contact-section">
+                <div class="footer-contact">
                     <h4>Contacto</h4>
-                    <div class="contact-info-modern">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Teléfono</span>
-                                <a href="tel:+18298949783">(829) 894-9783</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Email</span>
-                                <a href="mailto:info@kommunikacademy.com">info@kommunikacademy.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Ubicación</span>
-                                <span>Santo Domingo, República Dominicana</span>
-                            </div>
-                        </div>
-                    </div>
+                    <p><i class="fas fa-envelope"></i> KommuniKAcademy@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (829) 894-9783</p>
                 </div>
             </div>
-            
-            <!-- Parte inferior del footer -->
-            <div class="footer-bottom-modern">
-                <div class="footer-bottom-content">
-                    <div class="footer-copyright">
-                        <p>&copy; 2025 KommuniK Academy. Todos los derechos reservados.</p>
-                        <div class="footer-subtitle">Transformando futuros a través del inglés</div>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 KommuniK Academy. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/18298949783?text=Hola%2C%20estoy%20interesado%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20KommuniK%20Academy.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/18298949783" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- Scripts -->
     <script>
-        // FAQ Accordion
+        // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }));
+
+            // FAQ Accordion
             const faqItems = document.querySelectorAll('.faq-item');
             
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 
                 question.addEventListener('click', () => {
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current item
                     item.classList.toggle('active');
                 });
             });

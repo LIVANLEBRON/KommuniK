@@ -3,626 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KommuniK Academy - Academia de Inglés</title>
-    <link rel="icon" href="logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/floating-elements.css">
-    <link rel="stylesheet" href="css/header-adjustments.css">
-    <link rel="stylesheet" href="css/footer-styles.css">
-    <link rel="stylesheet" href="css/courses-styles.css">
+    <title>KommuniK Academy - Academia de Inglés Conversacional</title>
+    <link rel="icon" href="logo.ico">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header con navegación -->
+    <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="index.html" style="display:inline-flex;align-items:center;text-decoration:none;">
-                    <img src="images/logo.png" alt="KommuniK Academy Logo" style="height:40px;width:auto;vertical-align:middle;background:transparent;border-radius:0;padding:0;box-sizing:content-box;">
-                    <span style="font-size:1.3rem;font-weight:600;margin-left:10px;vertical-align:middle;color:#6c63ff;">KommuniK Academy</span>
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="logo.ico" alt="KommuniK Academy Logo">
+                    <h1>KommuniK Academy</h1>
                 </a>
-            </div>
-            <nav>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="cursos.html">Cursos</a></li>
-                    <li><a href="testimonios.html">Testimonios</a></li>
-                    <li><a href="asesorias.html">Asesorías</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li class="platform-btn"><a href="#" class="btn btn-primary">Acceder a la Plataforma</a></li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cursos.html" class="nav-link">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="testimonios.html" class="nav-link">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="asesorias.html" class="nav-link">Asesorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contacto.html" class="nav-link">Contacto</a>
+                    </li>
                 </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Elementos animados flotantes -->
-        <div class="floating-elements">
-            <div class="floating-element element-1"><i class="fas fa-comment-dots"></i></div>
-            <div class="floating-element element-2"><i class="fas fa-book"></i></div>
-            <div class="floating-element element-3"><i class="fas fa-graduation-cap"></i></div>
-            <div class="floating-element element-4"><i class="fas fa-globe-americas"></i></div>
-            <div class="floating-element element-5"><i class="fas fa-headset"></i></div>
-            <div class="floating-element element-6"><i class="fas fa-laptop"></i></div>
-            <div class="floating-element element-7">A</div>
-            <div class="floating-element element-8">B</div>
-            <div class="floating-element element-9">C</div>
-            <div class="floating-element element-10"><i class="fas fa-star"></i></div>
-            <div class="floating-element element-11"><i class="fas fa-certificate"></i></div>
-            <div class="floating-element element-12"><i class="fas fa-lightbulb"></i></div>
-        </div>
-        
-        <div class="container" style="position: relative; z-index: 2;">
+        <div class="container">
             <div class="hero-content">
-                <h1 class="animate-fade-in">Domina el inglés y transforma tu futuro</h1>
-                <p class="animate-fade-in delay-1">Especialistas en inglés conversacional y servicio al cliente para call center</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary btn-lg animate-fade-in delay-2">Acceder a la Plataforma</a>
-                    <a href="cursos.html" class="btn btn-secondary btn-lg animate-fade-in delay-3">Ver Cursos</a>
+                <h1 class="hero-title">Transforma tu futuro en inglés</h1>
+                <p class="hero-subtitle">Aprende inglés conversacional con metodologías efectivas y profesores experimentados</p>
+                <div class="hero-btns">
+                    <a href="cursos.html" class="btn">Explorar Cursos</a>
+                    <a href="contacto.html" class="btn btn-outline">Contáctanos</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Nosotros -->
-    <section class="about-modern" id="about">
+    <!-- About Section -->
+    <section class="section about">
         <div class="container">
-            <div class="section-header-modern">
-                <div class="section-badge">Conoce más</div>
-                <h2>Transformando futuros a través del inglés</h2>
-                <div class="separator-modern"></div>
-                <p class="section-subtitle">Somos más que una academia, somos tu puerta de entrada al éxito profesional</p>
-            </div>
-            
-            <div class="about-grid">
-                <div class="about-content-card">
-                    <div class="about-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3>Nuestra Misión</h3>
-                    <p>Formar profesionales con excelentes habilidades en inglés conversacional y servicio al cliente, preparándolos para destacar en el mercado laboral actual con confianza y competencia.</p>
+            <h2 class="section-title fade-in">Quiénes Somos</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>KommuniK Academy es una academia especializada en la enseñanza del inglés conversacional y servicio al cliente de excelencia. Nuestro enfoque se centra en desarrollar habilidades prácticas que te permitan comunicarte con fluidez y confianza en entornos personales y profesionales a través de clases 100% virtuales.</p>
+                    <p>Con metodologías innovadoras y grupos reducidos, garantizamos una atención personalizada que maximiza tu aprendizaje y te ayuda a alcanzar tus metas en el menor tiempo posible.</p>
+                    <p>Nuestros profesores son profesionales con amplia experiencia en la enseñanza del inglés y en entornos laborales internacionales, lo que nos permite ofrecerte una formación de calidad orientada a resultados reales.</p>
+                    <a href="contacto.html" class="btn">Comienza Hoy</a>
                 </div>
-                
-                <div class="about-content-card">
-                    <div class="about-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 18 12 18S18 15.31 18 12S15.31 6 12 6Z" fill="currentColor"/>
-                            <circle cx="12" cy="12" r="3" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3>Nuestra Visión</h3>
-                    <p>Ser la academia líder en formación de inglés orientado a la empleabilidad, reconocida internacionalmente por nuestro enfoque práctico y resultados comprobados.</p>
-                </div>
-                
-                <div class="about-content-card">
-                    <div class="about-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3>Nuestros Valores</h3>
-                    <div class="values-list">
-                        <div class="value-item">
-                            <span class="value-icon">✓</span>
-                            <span>Excelencia académica</span>
-                        </div>
-                        <div class="value-item">
-                            <span class="value-icon">✓</span>
-                            <span>Innovación pedagógica</span>
-                        </div>
-                        <div class="value-item">
-                            <span class="value-icon">✓</span>
-                            <span>Compromiso con el éxito</span>
-                        </div>
-                        <div class="value-item">
-                            <span class="value-icon">✓</span>
-                            <span>Atención personalizada</span>
-                        </div>
-                    </div>
+                <div class="about-image fade-in">
+                    <img src="3e4f3603-b1a8-4aa5-8ec0-e65f7fa73e4d.jpg" alt="KommuniK Academy">
                 </div>
             </div>
-            
-            <div class="stats-section">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Virtual</div>
-                        <div class="stat-description">Clases completamente online</div>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestros Cursos Destacados</h2>
+            <div class="courses-container">
+                <!-- Course 1 -->
+                <div class="course-card fade-in">
+                    <div class="course-image">
+                        <i class="fas fa-book"></i>
                     </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="stat-number">+1000</div>
-                        <div class="stat-label">Estudiantes</div>
-                        <div class="stat-description">Estudiantes exitosos</div>
+                    <div class="course-content">
+                        <h3 class="course-title">Inglés General (A1-C2)</h3>
+                        <p>Aprende inglés desde cero hasta un nivel avanzado con nuestro programa completo de 6 niveles.</p>
+                        <ul class="course-info">
+                            <li><i class="fas fa-calendar"></i> Martes y Jueves</li>
+                            <li><i class="fas fa-clock"></i> 7:00 PM - 9:00 PM</li>
+                            <li><i class="fas fa-tag"></i> RD$1,500 por nivel</li>
+                        </ul>
+                        <a href="cursos.html" class="btn">Más Información</a>
                     </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Plataforma</div>
-                        <div class="stat-description">Acceso sin límites</div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card fade-in">
+                    <div class="course-image">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Inglés Conversacional</h3>
+                        <p>Mejora tu fluidez y confianza al hablar inglés con nuestro programa especializado en conversación.</p>
+                        <ul class="course-info">
+                            <li><i class="fas fa-calendar"></i> Lunes y Miércoles</li>
+                            <li><i class="fas fa-clock"></i> 8:30 PM - 10:00 PM</li>
+                            <li><i class="fas fa-tag"></i> RD$2,000 por nivel</li>
+                        </ul>
+                        <a href="cursos.html" class="btn">Más Información</a>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card fade-in">
+                    <div class="course-image">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Inglés para Call Center</h3>
+                        <p>Prepárate para trabajar en call centers internacionales con nuestro programa especializado.</p>
+                        <ul class="course-info">
+                            <li><i class="fas fa-calendar"></i> Martes y Jueves</li>
+                            <li><i class="fas fa-clock"></i> 9:00 PM - 10:00 PM</li>
+                            <li><i class="fas fa-tag"></i> RD$2,000 por nivel</li>
+                        </ul>
+                        <a href="cursos.html" class="btn">Más Información</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ventajas -->
-    <section class="features-modern">
+    <!-- Why Choose Us Section -->
+    <section class="section about">
         <div class="container">
-            <div class="section-header-modern">
-                <div class="section-badge">Nuestras ventajas</div>
-                <h2>¿Por qué elegirnos?</h2>
-                <div class="separator-modern"></div>
-                <p class="section-subtitle">Descubre las razones que nos convierten en la mejor opción para tu formación en inglés</p>
-            </div>
-            
-            <div class="features-showcase">
-                <div class="showcase-image">
-                    <img src="images/por-que-elegirnos.jpg" alt="¿Por qué elegirnos?" class="showcase-img">
-                    <div class="showcase-overlay">
-                        <div class="showcase-badge"></div>
+            <h2 class="section-title fade-in">¿Por qué elegirnos?</h2>
+            <div class="advisory-content">
+                <div class="advisory-card fade-in">
+                    <div class="advisory-icon">
+                        <i class="fas fa-certificate"></i>
                     </div>
+                    <h3 class="advisory-title">Certificaciones Profesionales</h3>
+                    <p>Obtén certificados reconocidos que validan tus habilidades en inglés para mejorar tu perfil profesional.</p>
                 </div>
                 
-                <div class="features-intro-card">
-                    <h3>Metodología probada</h3>
-                    <p>Nuestro enfoque combina metodologías innovadoras, tecnología de vanguardia y un equipo de profesionales altamente calificados para garantizar tu éxito profesional.</p>
-                </div>
-            </div>
-            
-            <div class="features-grid-modern">
-                <!-- Aquí puedes agregar nuevas ventajas o dejar solo las que correspondan según las nuevas especificaciones. Ejemplo: -->
-                <div class="feature-card-premium">
-                    <div class="feature-header">
-                        <div class="feature-icon-premium">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 3H4C2.9 3 2 3.9 2 5V15C2 16.1 2.9 17 4 17H9L12 20L15 17H20C21.1 17 22 16.1 22 15V5C22 3.9 21.1 3 20 3Z" fill="currentColor"/>
-                                <circle cx="7" cy="9" r="1" fill="white"/>
-                                <circle cx="12" cy="9" r="1" fill="white"/>
-                                <circle cx="17" cy="9" r="1" fill="white"/>
-                                <path d="M6 12H18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="feature-badge">Metodología</div>
+                <div class="advisory-card fade-in">
+                    <div class="advisory-icon">
+                        <i class="fas fa-laptop"></i>
                     </div>
-                    <h3>Enfoque Conversacional</h3>
-                    <p>Habla inglés desde el primer día con nuestro método práctico centrado en situaciones reales del mundo profesional.</p>
-                    <div class="feature-benefits">
-                        <div class="benefit-item">
-                            <span class="benefit-icon">🎯</span>
-                            <span>Práctica constante de conversación</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">📱</span>
-                            <span>Plataforma digital 24/7</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">📈</span>
-                            <span>Feedback personalizado</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Cursos Destacados -->
-    <section class="courses-modern">
-        <div class="container">
-            <div class="section-header-modern">
-                <div class="section-badge">Nuestros cursos</div>
-                <h2>Programas Destacados</h2>
-                <div class="separator-modern"></div>
-                <p class="section-subtitle">Programas especializados diseñados para impulsar tu carrera profesional</p>
-            </div>
-            
-            <div class="courses-grid-modern">
-                <div class="course-card-premium featured">
-                    <div class="course-header">
-                        <div class="course-badge-premium">Más Popular</div>
-                    </div>
-                    
-                    <div class="course-image-premium online">
-                        <div class="course-icon-premium">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="course-overlay">
-                            <div class="course-stats">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-content-premium">
-                        <h3>Clases de Inglés Online</h3>
-                        <p>Domina el inglés desde casa con nuestro programa más completo. Clases interactivas, horarios flexibles y seguimiento personalizado.</p>
-                        
-                        <div class="course-features">
-                            <div class="feature-item">
-                                <span class="feature-icon">🎯</span>
-                                <span>Metodología conversacional</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">📱</span>
-                                <span>Plataforma digital 24/7</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🔄</span>
-                                <span>Actualizaciones constantes</span>
-                            </div>
-                        </div>
-                        
-                        <div class="course-meta-premium">
-                            <div class="meta-item">
-                                <span class="meta-icon">⏱️</span>
-                                <span>3 meses</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-icon">📊</span>
-                                <span>Todos los niveles</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-icon">🌐</span>
-                                <span>Clases virtuales</span>
-                            </div>
-                        </div>
-                        
-                        <div class="course-pricing">
-                            <div class="price-container">
-                                <span class="price-label">Desde</span>
-                                <span class="price-amount">$150</span>
-                                <span class="price-period">/mes</span>
-                            </div>
-                            <div class="price-note">Incluye material digital</div>
-                        </div>
-                        
-                        <div class="course-actions">
-                            <a href="cursos.html" class="btn-course-primary">Ver programa completo</a>
-                            <a href="contacto.html" class="btn-course-secondary">Consultar</a>
-                        </div>
-                    </div>
+                    <h3 class="advisory-title">Acceso 24/7</h3>
+                    <p>Accede a nuestra plataforma digital y material de estudio en cualquier momento y desde cualquier lugar.</p>
                 </div>
                 
-                <div class="course-card-premium">
-                    <div class="course-header">
-                        <div class="course-badge-premium conversation">Intensivo</div>
+                <div class="advisory-card fade-in">
+                    <div class="advisory-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    
-                    <div class="course-image-premium conversation">
-                        <div class="course-icon-premium">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 15L20.09 18.26L24 19L20.09 19.74L19 23L17.91 19.74L14 19L17.91 18.26L19 15Z" fill="currentColor"/>
-                                <path d="M5 6L5.5 7.5L7 8L5.5 8.5L5 10L4.5 8.5L3 8L4.5 7.5L5 6Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="course-overlay">
-                            <div class="course-stats">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-content-premium">
-                        <h3>Práctica de Conversación</h3>
-                        <p>Desarrolla fluidez y confianza con sesiones intensivas de conversación. Ideal para perfeccionar tu speaking y listening.</p>
-                        
-                        <div class="course-features">
-                            <div class="feature-item">
-                                <span class="feature-icon">🗣️</span>
-                                <span>Conversación intensiva</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🌍</span>
-                                <span>Enfoque internacional</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🎭</span>
-                                <span>Role-playing profesional</span>
-                            </div>
-                        </div>
-                        
-                        <div class="course-meta-premium">
-                            <div class="meta-item">
-                                <span class="meta-icon">⏱️</span>
-                                <span>2 meses</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-icon">📊</span>
-                                <span>Intermedio+</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-icon">🌐</span>
-                                <span>Clases virtuales</span>
-                            </div>
-                        </div>
-                        
-                        <div class="course-pricing">
-                            <div class="price-container">
-                                <span class="price-label">Desde</span>
-                                <span class="price-amount">$120</span>
-                                <span class="price-period">/mes</span>
-                            </div>
-                            <div class="price-note">Sesiones de 90 minutos</div>
-                        </div>
-                        
-                        <div class="course-actions">
-                            <a href="cursos.html" class="btn-course-primary">Ver programa completo</a>
-                            <a href="contacto.html" class="btn-course-secondary">Consultar</a>
-                        </div>
-                    </div>
+                    <h3 class="advisory-title">Grupos Reducidos</h3>
+                    <p>Atención personalizada en grupos pequeños para maximizar tu aprendizaje y participación.</p>
                 </div>
                 
-                <div class="course-card-premium">
-                    <div class="course-header">
-                        <div class="course-badge-premium callcenter">Especializado</div>
+                <div class="advisory-card fade-in">
+                    <div class="advisory-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    
-                    <div class="course-image-premium callcenter">
-                        <div class="course-icon-premium">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="course-overlay">
-                            <div class="course-stats">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-content-premium">
-                        <h3>Entrenamiento Call Center</h3>
-                        <p>Especialízate en inglés para call centers y atención al cliente. El programa más demandado por la industria.</p>
-                        
-                        <div class="course-features">
-                            <div class="feature-item">
-                                <span class="feature-icon">📞</span>
-                                <span>Técnicas de call center</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🎧</span>
-                                <span>Simulaciones reales</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">💼</span>
-                                <span>Certificación laboral</span>
-                            </div>
-                        </div>
-                        
-                        <div class="course-meta-premium">
-                            <div class="meta-item">
-                                <span class="meta-icon">⏱️</span>
-                                <span>4 meses</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-icon">📊</span>
-                                <span>Intermedio</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-icon">👥</span>
-                                <span></span>
-                            </div>
-                        </div>
-                        
-                        <div class="course-pricing">
-                            <div class="price-container">
-                                <span class="price-label">Desde</span>
-                                <span class="price-amount">$180</span>
-                                <span class="price-period">/mes</span>
-                            </div>
-                            <div class="price-note">Incluye certificación</div>
-                        </div>
-                        
-                        <div class="course-actions">
-                            <a href="cursos.html" class="btn-course-primary">Ver programa completo</a>
-                            <a href="contacto.html" class="btn-course-secondary">Consultar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="courses-cta">
-                <div class="cta-content-courses">
-                    <h3>¿No encuentras el curso ideal?</h3>
-                    <p>Contáctanos para diseñar un programa personalizado según tus necesidades específicas</p>
-                    <a href="contacto.html" class="btn-cta-courses">Programa personalizado</a>
+                    <h3 class="advisory-title">Seguimiento Académico</h3>
+                    <p>Monitoreo constante de tu progreso con retroalimentación personalizada para mejorar continuamente.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta cta-modern">
-        <div class="cta-background">
-            <div class="cta-shape cta-shape-1"></div>
-            <div class="cta-shape cta-shape-2"></div>
-            <div class="cta-shape cta-shape-3"></div>
-        </div>
+    <section class="section">
         <div class="container">
-            <div class="cta-content">
-                <div class="cta-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                        <path d="M19 15L20.09 18.26L24 19L20.09 19.74L19 23L17.91 19.74L14 19L17.91 18.26L19 15Z" fill="currentColor"/>
-                        <path d="M5 6L5.5 7.5L7 8L5.5 8.5L5 10L4.5 8.5L3 8L4.5 7.5L5 6Z" fill="currentColor"/>
-                    </svg>
-                </div>
+            <div class="cta-content text-center fade-in">
                 <h2>¿Listo para transformar tu futuro?</h2>
-                <p>Únete a KommuniK Academy y desarrolla las habilidades de inglés que necesitas para destacar en el mundo profesional. Tu éxito comienza aquí.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-white btn-lg btn-modern">Acceder a la Plataforma</a>
-                    <a href="cursos.html" class="btn btn-outline-white btn-lg btn-modern">Ver Cursos</a>
-                </div>
+                <p>Inscríbete hoy y comienza tu camino hacia la fluidez en inglés</p>
+                <a href="contacto.html" class="btn">Inscríbete Ahora</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer-modern">
-        <div class="footer-background">
-            <div class="footer-shape footer-shape-1"></div>
-            <div class="footer-shape footer-shape-2"></div>
-            <div class="footer-shape footer-shape-3"></div>
-        </div>
-        
+    <footer>
         <div class="container">
-            <div class="footer-content-modern">
-                <!-- Sección de marca -->
-                <div class="footer-brand">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-                                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
-                            </svg>
-                        </div>
-                        <div class="footer-logo-text">
-                            <h3>KommuniK Academy</h3>
-                            <div class="footer-tagline">Transformando futuros a través del inglés</div>
-                        </div>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="logo.ico" alt="KommuniK Academy Logo">
+                        <h2>KommuniK Academy</h2>
                     </div>
-                    
-                    <div class="footer-description">
-                        Somos una academia especializada en la enseñanza del idioma inglés, con programas diseñados para desarrollar habilidades prácticas y efectivas para el mundo profesional actual.
-                    </div>
-                    
-                    <div class="social-media-modern">
-                        <h5>Síguenos</h5>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/KommuniKAcademy" target="_blank" class="social-link instagram">
-                                <i class="fab fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a href="https://wa.me/18298949783" target="_blank" class="social-link whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                        </div>
+                    <p>Academia especializada en inglés conversacional y servicio al cliente.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/kommunikacademy" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/18298949783" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Sección de enlaces -->
-                <div class="footer-links-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li><a href="cursos.html"><i class="fas fa-book"></i> Cursos</a></li>
-                        <li><a href="testimonios.html"><i class="fas fa-comment-dots"></i> Testimonios</a></li>
-                        <li><a href="asesorias.html"><i class="fas fa-headset"></i> Asesorías</a></li>
-                        <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Sección de servicios -->
-                <div class="footer-services-section">
-                    <h4>Nuestros Cursos</h4>
-                    <ul class="footer-services-list">
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contáctanos</h3>
+                    <ul>
                         <li>
-                            <div class="service-icon"><i class="fas fa-headset"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés para Call Center</span>
-                                <span class="service-desc">4 semanas de entrenamiento especializado</span>
-                            </div>
+                            <i class="fas fa-envelope"></i>
+                            <span>KommuniKAcademy@gmail.com</span>
                         </li>
                         <li>
-                            <div class="service-icon"><i class="fas fa-comments"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés Conversacional</span>
-                                <span class="service-desc">2 niveles disponibles</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="service-info">
-                                <span class="service-name">Inglés General</span>
-                                <span class="service-desc">6 niveles desde A1 hasta C2</span>
-                            </div>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (829) 894-9783</span>
                         </li>
                     </ul>
-                </div>
-                
-                <!-- Sección de contacto -->
-                <div class="footer-contact-section">
-                    <h4>Contacto</h4>
-                    <div class="contact-info-modern">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Teléfono</span>
-                                <a href="tel:+18298949783">(829) 894-9783</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Email</span>
-                                <a href="mailto:info@kommunikacademy.com">info@kommunikacademy.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Ubicación</span>
-                                <span>Santo Domingo, República Dominicana</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             
-            <!-- Parte inferior del footer -->
-            <div class="footer-bottom-modern">
-                <div class="footer-bottom-content">
-                    <div class="footer-copyright">
-                        <p>&copy; 2025 KommuniK Academy. Todos los derechos reservados.</p>
-                        <div class="footer-subtitle">Transformando futuros a través del inglés</div>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KommuniK Academy. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/18298949783?text=Hola%2C%20estoy%20interesado%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20KommuniK%20Academy.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/18298949783" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
 </body>
 </html>
